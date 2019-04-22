@@ -1,0 +1,3 @@
+17:07:07 Open wav file ./sound/game31.wav failed!
+17:07:07 Byte_loadfile:file not open ---./data/kdef.idx
+17:07:07 Byte_loadfile:file not open ---./data/kdef.grp

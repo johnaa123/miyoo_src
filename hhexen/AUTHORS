@@ -1,0 +1,29 @@
+HHexen is maintained by:
+ Steven Atkinson <stevenaaus@yahoo.com>,
+ O.Sezer <sezero@users.sourceforge.net> and
+ Dan Olson <theoddone33@icculus.org> .  All
+inquiries and bug reports should be sent to
+these authors.
+
+
+Original Engine:
+  id Software - http://www.idsoftware.com/
+  Raven Software - http://www.ravensoft.com/
+
+Port to Linux:
+ Karl Robillard <wickedsmoke@raven-games.com>
+ Dan Olson <theoddone33@icculus.org>
+
+OpenGL Stuff:
+ Jaakko Keränen <jhexen@jaakkok.pp.fi>
+ Karl Robillard <wickedsmoke@raven-games.com>
+
+HHexen Programming:
+ Dan Olson <theoddone33@icculus.org>
+ Jim Cameron <jim@madeira.physiol.ucl.ac.uk>
+
+Bugfixes/Misc:
+ Andre Majorel <amajorel@teaser.fr>
+ Krzysztof Nikiel <krzych00@priv7.onet.pl>
+ Bill Currie <bill@taniwha.org>
+ Jean-Marc Zucconi <jmz@FreeBSD.org>

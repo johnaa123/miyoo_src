@@ -1,0 +1,224 @@
+g_game.o: g_game.c \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdio.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/features.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h \
+ /opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stddef.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_stdio.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/wchar.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/endian.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h \
+ /opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stdarg.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/stdio_lim.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdlib.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitflags.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitstatus.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/types.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/time.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/select.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/select.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/sysmacros.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/alloca.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/string.h \
+ doomdef.h \
+ /opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include-fixed/limits.h \
+ /opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include-fixed/syslimits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/limits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/posix1_lim.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/local_lim.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/linux/limits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_local_lim.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/posix2_lim.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/xopen_lim.h \
+ doomdata.h ../../src/doomtype.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/strings.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/inttypes.h \
+ /opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stdint.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdint.h \
+ dstrings.h info.h ../../src/w_wad.h ../../src/doomtype.h \
+ ../../src/w_file.h ../../src/m_fixed.h ../../src/tables.h \
+ ../../src/m_fixed.h ../../src/d_event.h ../../src/d_mode.h \
+ ../../src/d_ticcmd.h ../../src/d_loop.h ../../src/net_defs.h \
+ ../../src/d_ticcmd.h ../../src/sha1.h ../../src/z_zone.h sounds.h \
+ ../../src/i_sound.h ../../src/doomkeys.h ../../src/deh_str.h \
+ ../../src/doomfeatures.h ../../src/i_timer.h ../../src/i_system.h \
+ ../../src/d_event.h ../../src/m_controls.h ../../src/m_misc.h m_random.h \
+ p_local.h r_local.h ../../src/i_video.h ../../src/v_patch.h p_spec.h \
+ s_sound.h ../../src/v_video.h ../../src/v_patch.h
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdio.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/features.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h:
+
+/opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stddef.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_stdio.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/wchar.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/endian.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h:
+
+/opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stdarg.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/stdio_lim.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdlib.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitflags.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitstatus.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/types.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/time.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/select.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/select.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/sysmacros.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/alloca.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/string.h:
+
+doomdef.h:
+
+/opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include-fixed/limits.h:
+
+/opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include-fixed/syslimits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/limits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/posix1_lim.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/local_lim.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/linux/limits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_local_lim.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/posix2_lim.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/xopen_lim.h:
+
+doomdata.h:
+
+../../src/doomtype.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/strings.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/inttypes.h:
+
+/opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stdint.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdint.h:
+
+dstrings.h:
+
+info.h:
+
+../../src/w_wad.h:
+
+../../src/doomtype.h:
+
+../../src/w_file.h:
+
+../../src/m_fixed.h:
+
+../../src/tables.h:
+
+../../src/m_fixed.h:
+
+../../src/d_event.h:
+
+../../src/d_mode.h:
+
+../../src/d_ticcmd.h:
+
+../../src/d_loop.h:
+
+../../src/net_defs.h:
+
+../../src/d_ticcmd.h:
+
+../../src/sha1.h:
+
+../../src/z_zone.h:
+
+sounds.h:
+
+../../src/i_sound.h:
+
+../../src/doomkeys.h:
+
+../../src/deh_str.h:
+
+../../src/doomfeatures.h:
+
+../../src/i_timer.h:
+
+../../src/i_system.h:
+
+../../src/d_event.h:
+
+../../src/m_controls.h:
+
+../../src/m_misc.h:
+
+m_random.h:
+
+p_local.h:
+
+r_local.h:
+
+../../src/i_video.h:
+
+../../src/v_patch.h:
+
+p_spec.h:
+
+s_sound.h:
+
+../../src/v_video.h:
+
+../../src/v_patch.h:

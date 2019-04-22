@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PXML xmlns="http://openpandora.org/namespaces/PXML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PXML_schema.xsd">
+  <package id="glutexto">
+    <version major="1" minor="3" release="3" build="1"/>
+    <author name="Ziz" website="http://ziz.openhandhelds.org"/>
+    <titles>
+      <title lang="en_US">
+        Glutexto
+      </title>
+    </titles>
+    <title lang="en_US">
+      Glutexto
+    </title>
+    <descriptions>
+      <description lang="en_US">
+		Glutexto is a simple text editor I made for the gcw and other handhelds like the caanoo or wiz. In fact I don't think, that it is quite useful for the pandora as the input is optimized for devices without a real keyboard. However as I port my programs to all devices, you geht this, too. ;)
+		It supports:
+		  * Editing large files, you are only limited by your memory
+		  * utf8 support if the font supports it
+		  * line wrapping
+		  * line numbering
+		Pretty useful for small devices without keyboard, where you just want to change a config or similar. But as said, pretty useful for the pandora in fact. ^^
+		The name is a pun of the German word of "Charmeleon", which is "Glutexo".
+      </description>
+    </descriptions>
+    <description lang="en_US">
+		Glutexto is a simple text editor I made for the gcw and other handhelds like the caanoo or wiz. In fact I don't think, that it is quite useful for the pandora as the input is optimized for devices without a real keyboard. However as I port my programs to all devices, you geht this, too. ;)
+		It supports:
+		  * Editing large files, you are only limited by your memory
+		  * utf8 support if the font supports it
+		  * line wrapping
+		  * line numbering
+		Pretty useful for small devices without keyboard, where you just want to change a config or similar. But as said, pretty useful for the pandora in fact. ^^
+		The name is a pun of the German word of "Charmeleon", which is "Glutexo".
+    </description>
+    <icon src="./glutexto.png"/>
+  </package>
+  <application id="glutexto" appdata="glutexto">
+    <exec command="./glutexto.sh"/>
+    <title lang="en_US">Glutexto</title>
+    <author name="Ziz" website="http://ziz.openhandhelds.org"/>
+    <version major="1" minor="3" release="3" build="1"/>
+    <osversion major="1" minor="0" release="0" build="0"/>
+    <description lang="en_US">A puzzle game. On a tube!</description>
+    <icon src="./glutexto.png"/>
+    <previewpics>
+      <pic src="previews/glutexto.png"/>
+    </previewpics>
+    <licenses>
+      <license name="GPLv2+" url="http://www.gnu.org/licenses/gpl-2.0.html" sourcecodeurl="https://github.com/theZiz/glutexto"/>
+    </licenses>
+    <categories>
+      <category name="Utility"/>
+    </categories>
+  </application>
+</PXML>

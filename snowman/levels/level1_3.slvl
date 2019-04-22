@@ -1,0 +1,212 @@
+[head]
+# all coordinates are zero-based!
+music           = ./sounds/Cold Funk.ogg
+width           = 28
+height          = 52
+startx          = 2
+starty          = 50
+backgroundcolor = (63,127,255)
+havetokill      =  20
+failback        = ./levels/level1.slvl
+#startzoom       =  20.0
+[symbols]
+# symbol object-file                     color         form   measures (l,b,r,t)   function
+  '#'    ./data/cube.obj                 (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'T'    ./data/cube_nolrsites.obj       (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  't'    ./data/cube_nolrsites_small.obj (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '%'    ./data/cube_noudsites.obj       (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '!'    ./data/cube_nolrudsites.obj     (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '^'    ./data/cube_nolrusites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '_'    ./data/cube_nolrdsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '}'    ./data/cube_noludsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '{'    ./data/cube_norudsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  ']'    ./data/cube_nolsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '['    ./data/cube_norsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'U'    ./data/cube_nousites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '"'    ./data/cube_nodsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '|'    ./data/tree_stem.obj            (140,127,  0) quad   (-3.0,-1.0, 3.0, 3.0) none
+  '|'    ./data/tree_crown.obj           (31 ,255, 31) quad   (-3.0,-1.0, 3.0, 3.0) none
+  '?'    none                            (31 ,255, 31) quad   (-1.0, 0.0, 1.0, 1.0) none
+  '*'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) snow
+  'O'    ./data/door.obj                 (114,125,130) none   (-1.0,-1.0, 1.0, 1.0) load(./levels/level1_4.slvl),-14
+  '<'    ./data/arrow_left.obj           (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) left
+  '>'    ./data/arrow_right.obj          (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) right
+  'a'    enemy0                          (32,  32, 32) none   (-1.0,-1.0, 1.0, 1.0) waywalker,health=1
+  'b'    enemy1                          (  0,  0,255) none   (-1.0,-1.0, 1.0, 1.0) waywalker,health=1,weapon=1,shotfq=1000
+  'c'    enemy2                          (255,230,  0) none   (-1.5,-1.5, 1.5, 1.5) waywalker,health=3
+  'd'    enemy1                          (  0,  0,255) none   (-1.5,-1.5, 1.5, 1.0) waywalker,health=2,weapon=1,shotfq=1000
+  'B'    ./data/broom.obj                (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) broom
+  'C'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "If you get"
+  'D'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "hit you lose"
+  'E'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "three snow"
+  'F'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "Big water drops"
+  'G'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "shoot"
+  'H'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "small water drops"
+
+[layer0]
+# best viewed with a font, where width=height
+# 1 of 3 layers
+# in the background
+'                            '
+'         C                  '
+'         D                  '
+'         E                  '
+'   t                        '
+'                            '
+'                            '
+'                            '
+' t                       tt '
+'                      F     '
+'                      G     '
+'                      H     '
+'   t                        '
+'                            '
+'                            '
+'                            '
+' t                          '
+'                            '
+'                            '
+'                            '
+'   t                        '
+'                            '
+'                            '
+'                            '
+' t                          '
+'                            '
+'                            '
+'                            '
+'   t                        '
+'                            '
+'                            '
+'                            '
+' t                          '
+'                            '
+'                            '
+'                            '
+'   t                        '
+'                            '
+'                            '
+'                            '
+' t                          '
+'                            '
+'                            '
+'                            '
+'                         tt '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+[layer1]
+# 2 of 3 layers
+# the "game"-layer. With collision!
+'!__________________________!'
+'}                          {'
+'} [T]                      {'
+'}   %                      {'
+'!T] {T]    #    #    #    [!'
+'}   %   **   **   **   **  {'
+'}   %   **   **   **   **  {'
+'} o %   ** c ** c ** c **  {'
+'} [T!TTTTTTTTTTTTTTTTTTT]  {'
+'}   %                      {'
+'}   %                      {'
+'} o %                      {'
+'!T] {]    #    #    #    [T!'
+'}   %  **   **   **   **   {'
+'}   %  **   **   **   **   {'
+'} o %  ** b ** b ** b **   {'
+'} [T}  [TTTTTTTTTTTTTTTTTTT!'
+'}   %                      {'
+'}   %                      {'
+'} o %                      {'
+'!T] {T]    #    #    #    [!'
+'}   %   **   **   **   **  {'
+'}   %   **   **   **   **  {'
+'} o %   ** c ** c ** c **  {'
+'} [T!TTTTTTTTTTTTTTTTTTT]  {'
+'}   %                      {'
+'}   %                      {'
+'} o %                      {'
+'!T] {]    #    #    #    [T!'
+'}   %  **   **   **   **   {'
+'}   %  **   **   **   **   {'
+'} o %  ** d ** d ** d **   {'
+'} [T}  [TTTTTTTTTTTTTTTTTTT!'
+'}   %                      {'
+'}   %                      {'
+'} o %                      {'
+'!T] {T]    #    #    #    [!'
+'}   %   **   oo   oo   **  {'
+'}   %   **   oo   oo   **  {'
+'} o %O c** c oo c oo c ** c{'
+'} [T!TTTTTTTTTTTTTTTTTTTTTT!'
+'}   U                      {'
+'}                          {'
+'} * * * *a* *a* *a* * * *  {'
+'!TTTTTTTTTTTTTTTTTTTTTTT]  {'
+'}                          {'
+'}                          {'
+'}                         [!'
+'}                          {'
+'}                          {'
+'}  * * * * * * * * * * * * {'
+'!^^^^^^^^^^^^^^^^^^^^^^^^^^!'
+[layer2]
+# 3 of 3 layers
+# in the foreground
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+'                            '
+[end]

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=glutexto
+Comment=A very simple editor
+Exec=glutexto.sh
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=glutexto
+Categories=applications;
+X-OD-Manual=glutexto/README.md
+

@@ -1,0 +1,13 @@
+# Old default palette from 0.8.0 thru 0.9.13.
+# This was designed for use on a laptop display,
+# so it's probably way too yellowish.
+set dmg_bgp  0x78f0f0 0x58b8b8 0x487878 0x184848
+set dmg_wndp 0x78f0f0 0x58b8b8 0x487878 0x184848
+set dmg_obp0 0x78f0f0 0x58b8b8 0x487878 0x184848
+set dmg_obp1 0x78f0f0 0x58b8b8 0x487878 0x184848
+
+# yellow filter for color games
+set colorfilter 1
+set red 85 85 85 0
+set green 85 85 85 0
+set blue 0 0 0 0

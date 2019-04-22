@@ -1,0 +1,158 @@
+-------------------------------------------------------------------------------
+Release notes for version 1.6.0 - 1.6.3
+-------------------------------------------------------------------------------
+
+Bug Fixes:
+ - Fixed a rare menu related crash.
+ - Worked around audio corruption with the sdlmixer driver when SDL_mixer tried
+   looping the background music.
+ - Fixed interoperability of games saved on little and big endian machines.
+
+New Features:
+ - HHexen now uses a shared data path for its data files such as the wad files,
+   external music files, etc.  The shared data path is decided in the following
+   order:
+   * -waddir <DIR>,  new command line option added in hhexen-1.6.0,
+   * the HHEXEN_DATA environment variable,
+   * --with-datapath=<DIR>, new configure (compile time) option added in 1.6.0,
+   * the current working directory which has always been used as a last resort.
+ - More configure options for more flexibility especially for packagers:
+   * --enable-fullscreen: changes the game to run fullscreen by default.
+   * --disable-userdirs : builds the engine without user directories support.
+
+Notes:
+ - The game save fix may break game files saved on big endian machines using
+   hhexen-1.5.x.  The saves from little endian machines are fully compatible.
+
+-------------------------------------------------------------------------------
+Release notes for version 1.5.3
+-------------------------------------------------------------------------------
+
+Bug Fixes:
+ - Fixed SDL and SDL_mixer audio drivers to honor the -nosound command
+   line option.
+
+New Features:
+ - None.
+
+Notes:
+ - Added size sanity check for sfx lumps.
+ - Ensured that the new gcc-4.4 series compilers are properly supported.
+ - Renamed the "novideo" developer command line switch to "-novideo". Made
+   the SVGALib driver to honor it.
+
+-------------------------------------------------------------------------------
+Release notes for version 1.5.2
+-------------------------------------------------------------------------------
+
+Bug Fixes:
+ - Fixed SDL_mixer freeze with zero music volume in some cases.
+
+New Features:
+ - Added support for external music files to the sdlmixer driver:
+   External files with an .ogg, .mp3 or .mid extension are searched
+   first (in that given order) before playing the lumps in the wad
+   files.  The music files must be under the "music" subdirectory of
+   the normal installation folder. If not found, the ~/.hhexen/music
+   directory is searched.
+
+-------------------------------------------------------------------------------
+Release notes for version 1.5.1
+-------------------------------------------------------------------------------
+
+New Features:
+ - Added SDL audio driver.
+ - Added SDL_mixer audio driver with midi playback support.
+
+Bug Fixes:
+ - Fixed ARM support.
+ - Fixed a few minor coding issues with big endian support.
+
+Notes:
+ - The configure script accepts a new --with-audio=<driver> option.  Valid
+   values are oss, sdl, and sdlmixer.  sdl is the default option.  sdlmixer
+   adds the ability of midi music playback.
+
+-------------------------------------------------------------------------------
+Release notes for version 1.5
+-------------------------------------------------------------------------------
+
+New Features:
+ - Implemented intermission and finale screens for OpenGL.
+ - Support for the Mac version of the demo hexen.wad file.
+ - Support for big endian and 64 bit machines.
+
+Bug Fixes:
+ - Fixed a crash with binaries compiled by gcc-4.0.x series compilers.
+ - Fixed a sound related crash on FreeBSD.
+
+Notes:
+ - Shareware wad files don't need a special configuration anymore.
+ - HHexen now looks in the user directory for wad and lmp files, too.
+ - The recorded demos are now written in the user directory.
+ - All saved games from 32 bit, 64 bit, little endian and big endian machines
+   are compatible with each other.
+ - All of gcc-4.x series compilers are supported.
+ - See ChangeLog for details.
+
+-------------------------------------------------------------------------------
+Release notes for version 1.4
+-------------------------------------------------------------------------------
+
+New Features:
+ - Configs and savegames stored in users' home directories
+ - SDL based software and GL targets
+
+Bug Fixes:
+ - Mouse skipping fixed once and for all
+
+Notes:
+ - Compiles with GCC 2.95 and newer versions.
+ - See ChangeLog for details.
+
+-------------------------------------------------------------------------------
+Release notes for version 1.3
+-------------------------------------------------------------------------------
+
+New Features:
+ - Autorun option
+ - Variable screen resolutions for OpenGL versions
+ - More graphics for assassin weapons
+
+Bug Fixes:
+ - Demos now sync correctly
+ - Backstab now works better
+ - Smoother mouse for X11 and OpenGL
+
+Notes:
+  To use any resolution for OpenGL, run HHexenGL with the switches "-width"
+ and "-height".  Of course, you must specify the width and height you want
+ after the appropriate switch. Sorry, but for now the X11 version is 
+ staying with the double-size pixels.
+  Using the autorun feature is straightforward.  It can be turned on or off
+ from the "Options" menu.  Note that this is a "proper" autorun, meaning that
+ if you press the "Speed" key while autorun is enabled it will cause you to
+ walk.  Also note that autorun will not be enabled if you are recording a demo.
+  Demos now sync properly!  Much thanks to Krzysztof Nikiel for fixing this.
+  I know that the graphics for the crossbow look terrible.  I plan on doing
+ them over sometime.  If you have artistic talent and would like to draw some
+ graphics or fix up some of the existing ones, I will gratefully accept your
+ submission.
+  One last thing: HHexen now uses the file hhexen.cfg to store its settings.
+ The simplest way to preserve your settings is to rename your hexen.cfg file.
+ If you don't, a new file will be created using HHexen's default settings. 
+ This may not be ideal, since there is currently no way to change mouse buttons
+ from within the game.
+
+Thanks:
+ Jim Cameron, Krzysztof Nikiel: Programming
+ Dave "NivRaC" Turner, Horst Kausch: Testing and Bug Reports
+ William "Phoebus" Mull: HTML
+ Serge: ARM testing.
+ Bill Blake: PPC (PS3) testing
+
+Send comments or bug reports to:
+ Steven Atkinson <stevenaaus@yahoo.com>
+ O.Sezer <sezero@users.sourceforge.net>
+ Dan Olson <theoddone33@icculus.org>
+

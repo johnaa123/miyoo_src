@@ -1,0 +1,26 @@
+
+#ifndef __SYSSDL_H
+#define __SYSSDL_H
+
+#include "SDL.h"
+#include "../sys.h"
+
+#define BUTTON_NONE 0
+#define BUTTON_UP SDLK_UP
+#define BUTTON_DOWN SDLK_DOWN
+#define BUTTON_RIGHT SDLK_RIGHT
+#define BUTTON_LEFT SDLK_LEFT
+#define BUTTON_OK SDLK_RETURN
+#define BUTTON_PREVS SDLK_SPACE
+#define BUTTON_CANCEL SDLK_BACKSPACE
+#define BUTTON_PAGEUP SDLK_PAGEUP
+#define BUTTON_PAGEDOWN SDLK_PAGEDOWN
+
+#define MENU_OPTIONS_ITEMS 9
+
+#define MSG_FONT "etc/msg_font.png"
+#define MSG_FONT_SIZE 13
+
+#endif
+
+

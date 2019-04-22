@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE KDevPrjSession>
+<KDevPrjSession>
+ <DocsAndViews NumberOfDocuments="18" >
+  <Doc0 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/sys/gp2x/gp2x.c" >
+   <View0 Encoding="" line="49" Type="Source" />
+  </Doc0>
+  <Doc1 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/lcd.c" >
+   <View0 Encoding="" Type="Source" />
+  </Doc1>
+  <Doc2 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/supergb.c" >
+   <View0 Encoding="" Type="Source" />
+  </Doc2>
+  <Doc3 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/loader.c" >
+   <View0 Encoding="" Type="Source" />
+  </Doc3>
+  <Doc4 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/gui/menu.c" >
+   <View0 Encoding="" line="27" Type="Source" />
+  </Doc4>
+  <Doc5 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/cpu.c" >
+   <View0 Encoding="" Type="Source" />
+  </Doc5>
+  <Doc6 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/mem.c" >
+   <View0 Encoding="" Type="Source" />
+  </Doc6>
+  <Doc7 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/gui/options.c" >
+   <View0 Encoding="" line="0" Type="Source" />
+  </Doc7>
+  <Doc8 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/gui/menu.h" >
+   <View0 Encoding="" Type="Source" />
+  </Doc8>
+  <Doc9 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/sys/sys.h" >
+   <View0 Encoding="" Type="Source" />
+  </Doc9>
+  <Doc10 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/sys/sdl/sdl.c" >
+   <View0 Encoding="UTF-8" line="39" Type="Source" />
+  </Doc10>
+  <Doc11 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/gui/options.h" >
+   <View0 Encoding="" line="26" Type="Source" />
+  </Doc11>
+  <Doc12 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/supergb.h" >
+   <View0 Encoding="" Type="Source" />
+  </Doc12>
+  <Doc13 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/emu.c" >
+   <View0 Encoding="" Type="Source" />
+  </Doc13>
+  <Doc14 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/refresh.c" >
+   <View0 Encoding="" line="0" Type="Source" />
+  </Doc14>
+  <Doc15 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/main.c" >
+   <View0 Encoding="" line="353" Type="Source" />
+  </Doc15>
+  <Doc16 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/rccmds.c" >
+   <View0 Encoding="" line="14" Type="Source" />
+  </Doc16>
+  <Doc17 NumberOfViews="1" URL="file:///home/juanvi/gp2x/dev/lemonboy2x/src/sound.c" >
+   <View0 Encoding="" line="13" Type="Source" />
+  </Doc17>
+ </DocsAndViews>
+ <pluginList>
+  <kdevdebugger>
+   <breakpointList>
+    <breakpoint0 location="/home/juanvi/gp2x/dev/lemonboy2x/src/menuproba.c:568" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint0>
+   </breakpointList>
+   <showInternalCommands value="0" />
+  </kdevdebugger>
+  <kdevastyle>
+   <Extensions ext="*.cpp *.h *.hpp,*.c *.h,*.cxx *.hxx,*.c++ *.h++,*.cc *.hh,*.C *.H,*.diff ,*.inl,*.java,*.moc,*.patch,*.tlh,*.xpm" />
+   <AStyle IndentPreprocessors="0" FillCount="4" PadParenthesesOut="1" IndentNamespaces="1" IndentLabels="1" Fill="Tabs" MaxStatement="40" Brackets="Break" MinConditional="-1" IndentBrackets="0" PadParenthesesUn="1" BlockBreak="0" KeepStatements="1" KeepBlocks="1" BlockIfElse="0" IndentSwitches="1" PadOperators="0" FStyle="KR" IndentCases="0" FillEmptyLines="0" BracketsCloseHeaders="0" BlockBreakAll="0" PadParenthesesIn="1" IndentClasses="1" IndentBlocks="0" FillForce="0" />
+  </kdevastyle>
+  <kdevbookmarks>
+   <bookmarks/>
+  </kdevbookmarks>
+  <kdevvalgrind>
+   <executable path="" params="" />
+   <valgrind path="" params="" />
+   <calltree path="" params="" />
+   <kcachegrind path="" />
+  </kdevvalgrind>
+ </pluginList>
+</KDevPrjSession>

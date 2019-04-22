@@ -1,0 +1,24 @@
+- arrows!
+- sparrowNet with IRC
+- better input method: https://github.com/jxv/dosk
+
+Roadmap til 1.4:
+- sparrowNet new example
+	- new server registers with broadcast!
+- all 12 tutorials (4/12 done)
+- Skeleton project
+
+general Roadmap:
+- drawing primitives as parallel process
+	- gp2x:
+		- zBuffer needs to be in upper mem!
+		- division buffer in upper mem!
+		- zfar in upper mem!
+		- all math functions to upper mem!
+		- init gp2x coprocessor
+		- mutex for the state of the process
+		- spBindTexture
+			- setting getting physical address for gp2x for stack
+- rotozoom on second processor
+- all blits on second processor
+	- with hardware blitter

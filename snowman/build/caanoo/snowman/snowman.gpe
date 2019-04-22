@@ -1,0 +1,6 @@
+#!/bin/sh
+cd `dirname $0`
+
+LD_LIBRARY_PATH=. ./snowman 2>&1 >snowman.log
+
+cd /usr/gp2x; ./gp2xmenu

@@ -1,0 +1,1247 @@
+function oldCallEvent(eventnum)     --执行旧的事件函数
+
+
+    ReadKDEF(eventnum)
+
+
+	if eventnum==CC.NewGameEvent then
+		--Init_SMap_Debug()
+		for i=0,255 do
+			ReadCol(i)
+		end
+	end
+	
+end
+--提供对复课文件*.bin的读取（。。。为什么！！！没天理啊~~）
+function ReadBin()
+	local filelen,bin;
+	local leave,effect,match;
+	local v;
+	leave=CONFIG.CurrentPath..'list\\leave.bin';
+	effect=CONFIG.CurrentPath..'list\\effect.bin';
+	match=CONFIG.CurrentPath..'list\\match.bin';
+	--leave.bin离队人物列表
+	filelen=filelength(leave);
+	if filelen>0 then
+		bin=Byte.create(filelen);
+		Byte.loadfile(bin,leave,0,filelen);
+		CC.PersonExit={};
+		for i=1,filelen/2 do
+			v=Byte.get16(bin,i*2-2);
+			CC.PersonExit[i]={v,i*2-1};
+		end
+	end
+	--effect.bin武功eft帧数列表
+	filelen=filelength(effect);
+	if filelen>0 then
+		bin=Byte.create(filelen);
+		Byte.loadfile(bin,effect,0,filelen);
+		CC.Effect={};
+		for i=0,filelen/2-1 do
+			v=Byte.get16(bin,i*2);
+			CC.Effect[i]=v;
+		end
+	end
+	CC.Effect[0]=CC.Effect[0]-1;
+	--match.bin武功武器配合列表
+	filelen=filelength(match);
+	if filelen>0 then
+		bin=Byte.create(filelen);
+		Byte.loadfile(bin,match,0,filelen);
+		CC.ExtraOffense={};
+		for i=0,filelen/3-1 do
+			CC.ExtraOffense[i+1]={Byte.get16(bin,i*6),Byte.get16(bin,i*6+2),Byte.get16(bin,i*6+4)};
+		end
+	end
+end
+--
+function ReadCol(id)
+	local r,g,b,col;
+	col=Byte.create(4);
+	Byte.loadfile(col,CONFIG.DataPath..'mmap.col',id*3,3);
+	b,g,r=GetRGB(Byte.get32(col,0));
+	return RGB(r*4,g*4,b*4);
+end
+--提供即时解析kdef和talk文件，最终目标支持50指令
+--CC.MaxEvent=1727
+function ReadKDEF(id)
+	--id事件编号
+	local kidx;
+	local tmp_x,tmp_y,tmp_x1,tmp_y1;
+	--lib.Debug('Event:'..id)
+	local idx1,idx2;
+	if id<1 then
+		return;
+	else
+		kidx=Byte.create(8);
+		Byte.loadfile(kidx,CC.KDX,id*4-4,8)
+		idx1=Byte.get32(kidx,0);
+		idx2=Byte.get32(kidx,4);
+	end
+	--idx,编号为id的事件的索引值
+	local len=idx2-idx1
+	--lib.Debug('length='..len)
+	local kdef=Byte.create(len)
+	Byte.loadfile(kdef,CC.KRP,idx1,len)
+	local E={}
+	len=len/2;
+	--lib.Debug(len)
+	for i=0,len-1 do
+		--lib.Debug(lib.GetTime())
+		E[i]=Byte.get16(kdef,2*i);
+	end
+	--Crack(E,len);
+	local idx=0		--
+	
+	local function getb(b,num)
+		num=math.modf(num/(2^b))
+		num=math.fmod(num,2)
+		return num
+	end
+	local function getvaule(b,t,ee)
+		if getb(b,t)==1 then
+			local rv=x50[ee] or 0;
+			if type(rv)=='string' then
+				local l=string.byte(rv,1) or 0;
+				local h=string.byte(rv,2) or 0;
+				rv=l+h*256;
+			end
+			return rv;--Byte.get16(x50,ee*2)
+		else
+			return ee;
+		end
+	end
+	local function getchar(char)
+		local l,h;
+		if char<0 then
+			char=65536+char;
+		end
+		l=char%256;
+		h=math.modf(char/256);
+		l=string.char(l);
+		if h==0 then
+			return l;
+		else
+			h=string.char(h);
+			return l..h;
+		end
+	end
+	local newinstruct_50_sub={
+							[0]=function(e1,e2,e3,e4,e5,e6)	--3.1.	变量赋值50(0,x,v,-1,-1,-1,-1)
+								--Byte.set16(x50,e1*2,e2);
+								x50[e1]=e2;
+							end,
+							[1]=function(e1,e2,e3,e4,e5,e6)	--3.2.	数组变量赋值50(1, type1,type2,x, I , y , -1)
+								--e3=Byte.get16(x50,e3*2)
+								e4=getvaule(0,e1,e4);
+								e5=getvaule(1,e1,e5);
+								--lib.Debug((e3+e4)..','..e5)
+								if e2==0 then
+									--Byte.set16(x50,(e3+e4)*2,e5);
+									x50[e3+e4]=e5;
+								elseif e2==1 then	--不明白存字节有什么用
+									--local num=Byte.get16(x50,(e3+e4)*2);
+									--[[local num=x50[e3+e4];
+									num=math.modf(num/256);
+									e5=num%256;
+									e5=num*256+e5;]]--
+									--Byte.set16(x50,(e3+e4)*2,e5);
+									x50[e3+e4]=e5%256;
+								end
+								--lib.Debug(e3..','..e4..'|'..e5)
+							end,
+							[2]=function(e1,e2,e3,e4,e5,e6)	--3.3.	取数组变量值50(2, type1,type2,x, I , y , -1)
+								--e3=Byte.get16(x50,e3*2)
+								e4=getvaule(0,e1,e4);
+								--e5=Byte.get16(x50,e5*2)
+								--local num=Byte.get16(x50,(e3+e4)*2);
+								local num=getvaule(0,1,e3+e4)--x50[e3+e4];
+								if e2==1 then
+									--num=math.fmod(num,256);
+									num=num%256;
+								end
+								--lib.Debug('KA'..num);
+								--Byte.set16(x50,e5*2,num);
+								x50[e5]=num;
+							end,
+							[3]=function(e1,e2,e3,e4,e5,e6)	--3.4.	四则运算(3, type1,type2,y, a , b , -1 )
+								if e2==5 then
+									--e4=Byte.getu16(x50,e4*2);
+									e4=getvaule(0,1,e4);--x50[e4];
+									if e4<0 then
+										e4=65536+e4;
+									end
+									e2=3;
+								else
+									--e4=Byte.get16(x50,e4*2);
+									e4=getvaule(0,1,e4);--x50[e4];
+								end
+								--e3=Byte.get16(x50,e3*2)
+								e5=getvaule(0,e1,e5);
+								if e2==0 then
+									--Byte.set16(x50,e3*2,e4+e5);
+									x50[e3]=e4+e5;
+								elseif e2==1 then
+									--Byte.set16(x50,e3*2,e4-e5);
+									x50[e3]=e4-e5;
+								elseif e2==2 then
+									--Byte.set16(x50,e3*2,e4*e5);
+									x50[e3]=e4*e5;
+								elseif e2==3 then
+									--Byte.set16(x50,e3*2,math.modf(e4/e5));
+									x50[e3]=math.modf(e4/e5);
+								elseif e2==4 then
+									--Byte.set16(x50,e3*2,math.fmod(e4,e5));
+									x50[e3]=e4%e5;
+								end
+								--lib.Debug(e3..','..e4..'|'..e5);
+							end,
+							[4]=function(e1,e2,e3,e4,e5,e6)	--3.5.	变量判断(4, Type1, Type2,a, b , -1, -1 )
+								--Byte.set16(x50,57344,1);
+								x50[28672]=1;
+								--e3=Byte.get16(x50,e3*2);
+								e3=getvaule(0,1,e3);--x50[e3];
+								--lib.Debug('<<'..e3..'?'..e4);
+								e4=getvaule(0,e1,e4);
+								if e2==0 and e3<e4 then
+									--Byte.set16(x50,57344,0);
+									x50[28672]=0;
+								elseif e2==1 and e3<=e4 then
+									--Byte.set16(x50,57344,0);
+									x50[28672]=0;
+								elseif e2==2 and e3==e4 then
+									--Byte.set16(x50,57344,0);
+									x50[28672]=0;
+								elseif e2==3 and e3~=e4 then
+									--Byte.set16(x50,57344,0);
+									x50[28672]=0;
+								elseif e2==4 and e3>=e4 then
+									--Byte.set16(x50,57344,0);
+									x50[28672]=0;
+								elseif e2==5 and e3>e4 then
+									--Byte.set16(x50,57344,0);
+									x50[28672]=0;
+								elseif e2==6 then
+									--Byte.set16(x50,57344,0);
+									x50[28672]=0;
+								end
+							end,
+							[5]=function(e1,e2,e3,e4,e5,e6)	--3.6.	全部变量清零(5,-1,-1,-1,-1,-1,-1)
+								--for i=0,65535,4 do
+								--	Byte.set32(x50,i,0);
+								--end
+								for i=0,32767 do
+									x50[i]=0;
+								end
+							end,
+							[6]=function(e1,e2,e3,e4,e5,e6)	--3.7.	变量名定义(6,x,s1,s2,s3,s4,s5)
+								
+							end,
+							[8]=function(e1,e2,e3,e4,e5,e6)	--4.1.	读对话到字符串(8,type,id,x ,-1 , -1, -1)
+								e2=getvaule(0,e1,e2)
+								--e3=Byte.get16(x50,e3*2)
+								--[[
+								local tidx=Byte.create(e2*4+4)
+								Byte.loadfile(tidx,CC.TDX,0,e2*4+4)
+								local idx1,idx2
+								if e2<1 then
+									idx1=0
+								else
+									idx1=Byte.get32(tidx,(e2-1)*4)
+								end
+								idx2=Byte.get32(tidx,e2*4)
+								local len=idx2-idx1
+								local talk=Byte.create(len)
+								Byte.loadfile(talk,CC.TRP,idx1,len)
+								local str=''
+								for i=0,len-2 do
+									local byte=Byte.getu16(talk,i)
+									byte=255-math.fmod(byte,256)
+									str=str..string.char(byte)
+									--Byte.setu16(x50,e3*2+i,byte)
+								end
+								str=lib.CharSet(str,0)
+								]]--
+								local str=ReadTALK(e2,1);
+								local len=math.modf(0.5+string.len(str)/2);
+								for i=0,len-1 do
+									--local byte=string.byte(str,i+1)
+									--Byte.setu16(x50,e3*2+i,byte)
+									x50[e3+i]=string.sub(str,i*2+1,i*2+2);
+								end
+								x50[e3+len]=0;
+								--lib.Debug(e3..','..str)
+								CC.TalkString="1"              --判断是否为从old_talk.grp中读取的文字内容
+							end,
+							[9]=function(e1,e2,e3,e4,e5,e6)	--4.2.	sprintf(9, type,s, format, x, -1, -1)
+								e4=getvaule(0,e1,e4)
+								local str=''--ReadTALK(e3)
+								for i=0,1000 do
+									--[[local byte=Byte.getu16(x50,e3*2+i);
+									byte=math.fmod(byte,256);
+									if byte>0 then
+										str=str..string.char(byte);
+									else
+										break;
+									end
+									]]--
+									local char=x50[e3+i] or 0;
+									if type(char)=='string' then
+										str=str..char;
+									elseif char~=0 then
+										str=str..getchar(char);
+									else
+										break;
+									end
+								end
+								str=string.format(str,e4);
+								local len=math.modf(0.5+string.len(str)/2);
+								for i=0,len-1 do
+									--Byte.setu16(x50,e2*2+i,string.byte(str,i+1));
+									x50[e2+i]=string.sub(str,i*2+1,i*2+2);
+								end
+								x50[e2+len]=0;
+							end,
+							[10]=function(e1,e2,e3,e4,e5,e6)	--4.3.	取字符串长度(10,s,l,-1,-1,-1)
+								for i=0,1000 do
+									--local byte=Byte.getu16(x50,e1*2+i);
+									--byte=math.fmod(byte,256);
+									--if byte==0 then
+									--	Byte.setu16(x50,e2*2,i);
+									--	break;
+									--end
+									local char=x50[e1+i] or 0;
+									if type(char)=='string' then
+										
+									elseif char~=0 then
+										
+									else
+										x50[e2]=i*2;
+										break;
+									end
+								end
+							end,
+							[11]=function(e1,e2,e3,e4,e5,e6)	--4.4.	字符串合并(11,x,a,b,-1,-1)
+								local stra,strb,strx='','';
+								for i=0,1000 do
+									--[[local byte=Byte.getu16(x50,e2*2+i)
+									byte=math.fmod(byte,256)
+									if byte>0 then
+										stra=stra..string.char(byte)
+									else
+										break
+									end]]--
+									local char=x50[e2+i] or 0;
+									if type(char)=='string' then
+										stra=stra..char;
+									elseif char~=0 then
+										stra=stra..getchar(char);
+									else
+										break;
+									end
+								end
+								for i=0,1000 do
+									--[[local byte=Byte.getu16(x50,e3*2+i)
+									byte=math.fmod(byte,256)
+									if byte>0 then
+										strb=strb..string.char(byte)
+									else
+										break
+									end]]--
+									local char=x50[e3+i] or 0;
+									if type(char)=='string' then
+										strb=strb..char;
+									elseif char~=0 then
+										strb=strb..getchar(char);
+									else
+										break;
+									end
+								end
+								strx=stra..strb;
+								--[[for i=0,string.len(strx)-1 do
+									Byte.setu16(x50,e1*2+i,string.byte(strx,i+1))
+								end]]--
+								local len=math.modf(0.5+string.len(strx)/2);
+								for i=0,len-1 do
+									--Byte.setu16(x50,e2*2+i,string.byte(str,i+1));
+									x50[e1+i]=string.sub(strx,i*2+1,i*2+2);
+								end
+								x50[e1+len]=0;
+
+								strx=lib.CharSet(strx,0);
+								stra=lib.CharSet(stra,0);
+								strb=lib.CharSet(strb,0);
+								
+    								CC.TalkString="1";
+
+								--lib.Debug('50-10[['..strx..'='..stra..'+'..strb)
+								
+							end,
+							[12]=function(e1,e2,e3,e4,e5,e6)	--4.5.	产生空格字符串(12,type,s,n,-1,-1)
+								--if e1==1 then
+								--	e3=Byte.get16(x50,e3*2)
+								--end
+								e3=getvaule(0,e1,e3);
+								--[[for i=0,e3-1 do
+									Byte.setu16(x50,e2*2+i,32)
+								end]]--
+								local len=math.modf(0.5+e3/2);
+								for i=0,len-1 do
+									--Byte.setu16(x50,e2*2+i,string.byte(str,i+1));
+									x50[e2+i]='  ';
+								end
+								x50[e2+len]=0;
+							end,
+							[16]=function(e1,e2,e3,e4,e5,e6)	--5.1.	保存人物物品等属性(16, type1,type2,id, i , x, -1)
+								e3=getvaule(0,e1,e3);
+								e4=getvaule(1,e1,e4);
+								e5=getvaule(2,e1,e5);
+								local v
+								if e2==0 then
+									Byte.set16(JY.Data_Person,CC.PersonSize*e3+e4,e5)
+								elseif e2==1 then
+									Byte.set16(JY.Data_Thing,CC.ThingSize*e3+e4,e5)
+								elseif e2==2 then
+									Byte.set16(JY.Data_Scene,CC.SceneSize*e3+e4,e5)
+								elseif e2==3 then
+									Byte.set16(JY.Data_Wugong,CC.WugongSize*e3+e4,e5)
+								elseif e2==4 then
+									Byte.set16(JY.Data_Shop,CC.ShopSize*e3+e4,e5)
+								end
+								--lib.Debug('OOO|'..e3..','..e4..','..e5)
+							end,
+							[17]=function(e1,e2,e3,e4,e5,e6)	--5.2.	取人物物品等属性(17, type1,type2，id, i , x, -1)
+								e3=getvaule(0,e1,e3);
+								e4=getvaule(1,e1,e4);
+								--e5=Byte.get16(x50,e5*2)
+								local v
+								if e2==0 then
+									v=Byte.get16(JY.Data_Person,CC.PersonSize*e3+e4);
+								elseif e2==1 then
+									v=Byte.get16(JY.Data_Thing,CC.ThingSize*e3+e4);
+								elseif e2==2 then
+									v=Byte.get16(JY.Data_Scene,CC.SceneSize*e3+e4);
+								elseif e2==3 then
+									v=Byte.get16(JY.Data_Wugong,CC.WugongSize*e3+e4);
+								elseif e2==4 then
+									v=Byte.get16(JY.Data_Shop,CC.ShopSize*e3+e4);
+								end
+								--Byte.set16(x50,e5*2,v);
+								x50[e5]=v;
+								--lib.Debug(e2..','..e3..','..e4..','..v)
+							end,
+							[18]=function(e1,e2,e3,e4,e5,e6)	--5.3.	存队伍(18, type,id, x , -1, -1, -1)
+								e2=getvaule(0,e1,e2)+1;
+								e3=getvaule(1,e1,e3);
+								JY.Base['队伍'..e2]=e3;
+							end,
+							[19]=function(e1,e2,e3,e4,e5,e6)	--5.4.	取队伍(19, type,id, x , -1, -1, -1)
+								e2=getvaule(0,e1,e2)+1;
+								--e3=Byte.get16(e3*2)
+								--Byte.set16(x50,e3*2,JY.Base['队伍'..e2]);
+								x50[e3]=JY.Base['队伍'..e2];
+							end,
+							[20]=function(e1,e2,e3,e4,e5,e6)	--5.5.	得到主角携带的物品数量 (20,type,i, x , -1, -1, -1)
+								e2=getvaule(0,e1,e2);
+								--e3=Byte.get16(e3*2)
+								for i=1,CC.MyThingNum do
+									if JY.Base['物品'..i]==e2 then
+										--Byte.set16(x50,e3*2,JY.Base['物品数量'..i]);
+										x50[e3]=JY.Base['物品数量'..i]
+										break;
+									end
+								end
+							end,
+							[21]=function(e1,e2,e3,e4,e5,e6)	--5.6.	存D*数据(21,type,id, i , j, x, -1)
+								e2=getvaule(0,e1,e2);
+								e3=getvaule(1,e1,e3);
+								e4=getvaule(2,e1,e4);
+								e5=getvaule(3,e1,e5);
+								lib.SetD(e2,e3,e4,e5);
+							end,
+							[22]=function(e1,e2,e3,e4,e5,e6)	--5.7.	取D*数据(22,type,id, i , j, x, -1)
+								e2=getvaule(0,e1,e2);
+								e3=getvaule(1,e1,e3);
+								e4=getvaule(2,e1,e4);
+								--e5=Byte.get16(x50,e5*2)
+								--Byte.set16(x50,e5*2,lib.GetD(e2,e3,e4));
+								x50[e5]=lib.GetD(e2,e3,e4);
+							end,
+							[23]=function(e1,e2,e3,e4,e5,e6)	--5.8.	存S*数据(23,type,id, i , x, y, v)
+								e2=getvaule(0,e1,e2);
+								e3=getvaule(1,e1,e3);
+								e4=getvaule(2,e1,e4);
+								e5=getvaule(3,e1,e5);
+								e6=getvaule(4,e1,e6);
+								--[[
+								if e3==3 then
+									local x,y=lib.GetD(e2,e6,9),lib.GetD(e2,e6,10);
+									lib.SetS(e2,x,y,3,-1);
+								end]]--
+								--lib.Debug(string.format('SetS:%d,%d,%d,%d,%d',e2,e4,e5,e3,e6));
+								lib.SetS(e2,e4,e5,e3,e6);
+							end,
+							[24]=function(e1,e2,e3,e4,e5,e6)	--5.9.	取S*数据(24,type,id, i , x, y, v)
+								e2=getvaule(0,e1,e2);
+								e3=getvaule(1,e1,e3);
+								e4=getvaule(2,e1,e4);
+								e5=getvaule(3,e1,e5);
+								--e6=Byte.get16(x50,e6*2)
+								--Byte.set16(x50,e6*2,lib.GetS(e2,e4,e5,e3));
+								x50[e6]=lib.GetS(e2,e4,e5,e3);
+							end,
+							[25]=function(e1,e2,e3,e4,e5,e6)	--5.10.	存给定内存地址数据(25,type1,type2, AddressL ,AddressH , x, i)	
+								e5=getvaule(0,e1,e5);
+								e6=getvaule(1,e1,e6);
+								if e3<0 then
+									e3=65536+e3;
+								end
+								if e4<0 then
+									e4=65536+e4;
+								end
+								--lib.Debug('H:'..e4..',L:'..e3..',off:'..e6);
+								local v
+								local address=e4*65536+e3+e6;
+								if e2==1 then
+									local num=x50[e5] or 0--Byte.get16(x50,e5*2);
+									num=math.modf(num/256);
+									v=math.fmod(num,256);
+									v=num*256+v;
+								end
+								if address==1838072 then	--主角贴图号
+									JY.MyPic=e5;
+								elseif address==345330 then
+									JY.Base['人方向']=e5;
+								elseif address==1911134 then
+									JY.SubScene=e5;
+								elseif address==1911132 then
+									JY.Base['人X1']=e5;
+								elseif address==1911130 then
+									JY.Base['人Y1']=e5;
+								elseif address==1911128 then
+									--JY.Base['人X']=e5;
+								elseif address==1911126 then
+									--JY.Base['人Y']=e5;
+								elseif address==1837964 then
+									JY.Base['人X']=e5;
+								elseif address==1837960 then
+									JY.Base['人Y']=e5;
+								elseif address>=1637932 and address<1638732 then
+									address=address-1637932;
+									local id=1+math.modf(address/4);
+									local kind=address%4;
+									if kind==0 then
+										JY.Base['物品'..id]=e5;
+									elseif kind==2 then
+										JY.Base['物品数量'..id]=e5;
+									end
+								end
+								--lib.Debug('save>'..address..'::'..e5);
+							end,
+							[26]=function(e1,e2,e3,e4,e5,e6)	--5.11.	取给定内存地址数据(26,type1,type2, AddressL ,AddressH , x, i)
+								--e5=getvaule(0,e1,e5)
+								e6=getvaule(0,e1,e6);
+								if e3<0 then
+									e3=65536+e3;
+								end
+								if e4<0 then
+									e4=65536+e4;
+								end
+								local v=0;
+								local address=e4*65536+e3+e6;
+								--lib.Debug('H:'..e4..',L:'..e3..',off:'..e6);
+								if address==1838072 then	--主角贴图号
+									v=JY.MyPic;
+								elseif address==345330 then
+									v=JY.Base['人方向'];
+								elseif address==1911134 then
+									v=JY.SubScene;
+								elseif address==1911132 then
+									v=JY.Base['人X1'];
+								elseif address==1911130 then
+									v=JY.Base['人Y1'];
+								elseif address==1911128 then
+									v=JY.Base['人X'];
+								elseif address==1911126 then
+									v=JY.Base['人Y'];
+								elseif address==1837964 then
+									v=JY.Base['人X'];
+								elseif address==1837960 then
+									v=JY.Base['人Y'];
+								elseif address==374074 then
+									if CONFIG.Type==1 then
+										v=1;
+									else
+										v=0;
+									end
+								elseif address>=1637932 and address<=1638734 then
+									address=address-1637932;
+									local id=1+math.modf(address/4);
+									local kind=address%4;
+									if kind==0 then
+										v=JY.Base['物品'..id];
+									elseif kind==2 then
+										v=JY.Base['物品数量'..id];
+									end
+								end
+								if e2==0 then
+									--Byte.set16(x50,e5*2,v);
+									x50[e5]=v
+								elseif e2==1 then
+									--[[local num=Byte.get16(x50,e5*2);
+									num=math.modf(num/256);
+									v=math.fmod(num,256);
+									v=num*256+v;]]--
+									--Byte.set16(x50,e5*2,v);
+									x50[e5]=v%256;
+								end
+								--lib.Debug('load>'..address..'::'..v);
+							end,
+							[27]=function(e1,e2,e3,e4,e5,e6)	--5.12.	取人物物品等属性名称(27, type1,type2,id, s , -1, -1)
+								e3=getvaule(0,e1,e3);
+								--lib.Debug('27>>'..e3)
+								--e4=Byte.get16(x50,e4*2)
+								local str
+								if e2==0 then
+									str=JY.Person[e3]['姓名'];
+								elseif e2==1 then
+									str=JY.Thing[e3]['名称'];
+								elseif e2==2 then
+									str=JY.Scene[e3]['名称'];
+								elseif e2==3 then
+									str=JY.Wugong[e3]['名称'];
+								end
+								--str=lib.CharSet(str,1);
+								--lib.Debug('50-27[['..e3..'>-'..str);
+								--[[for i=0,string.len(str)-1 do
+									Byte.setu16(x50,e4*2+i,string.byte(str,i+1))
+								end]]--
+								local len=math.modf(0.5+string.len(str)/2);
+								for i=0,len-1 do
+									x50[e4+i]=string.sub(str,i*2+1,i*2+2);
+								end
+								x50[e4+len]=0;
+    								
+								CC.TalkString="1"
+
+							end,
+							[32]=function(e1,e2,e3,e4,e5,e6)	--6.1.	修改指令参数(32, type ,x,i,-1 , -1, -1)
+								e3=getvaule(0,e1,e3);
+								--E[idx+8+e3]=Byte.get16(x50,e2*2);
+								E[idx+8+e3]=x50[e2] or 0;
+							end,
+							[33]=function(e1,e2,e3,e4,e5,e6)	--6.2.	显示字符串(33,type,s,x,y ,color,-1)
+								--e2=Byte.get16(x50,e2*2)
+								e3=getvaule(0,e1,e3);
+								e4=getvaule(1,e1,e4);
+								e5=getvaule(2,e1,e5);
+								if e5<0 then
+									e5=65536+e5;
+								end
+								local str='';
+								local col=ReadCol(e5%256);
+								for i=0,1000 do
+									--[[
+									local byte=Byte.getu16(x50,e2*2+i)
+									byte=math.fmod(byte,256)
+									if byte>0 then
+										str=str..string.char(byte)
+									else
+										break
+									end
+									]]--
+									local char=x50[e2+i] or 0;
+									if type(char)=='string' then
+										str=str..char;
+									elseif char~=0 then
+										str=str..getchar(char);
+									else
+										break;
+									end
+								end
+								--str=lib.CharSet(str,0);
+								local fontsize;
+								if CONFIG.Type==1 then
+									fontsize=18;            ---试验类型
+								else
+									fontsize=CC.DefaultFont;
+								end
+								--lib.Debug('DrawStr::'..str);
+								CC.TalkString="1";
+								DrawString(e3,e4,str,col,fontsize);
+								ShowScreen();
+							end,
+							[34]=function(e1,e2,e3,e4,e5,e6)	--6.3.	处理背景(34,type,x,y,w , h,-1)
+								if E[idx+8]==50 and (E[idx+9]==39 or E[idx+9]==40) then
+									
+								else
+									e2=getvaule(0,e1,e2);
+									e3=getvaule(1,e1,e3);
+									e4=getvaule(2,e1,e4);
+									e5=getvaule(3,e1,e5);
+									DrawBox(e2,e3,e2+e4,e3+e5,C_WHITE);
+									tmp_x,tmp_y,tmp_x1,tmp_y1=e2-4,e3-4,e2+e4+4,e3+e5+4;
+								end
+								--ShowScreen();
+								--return
+							end,
+							[35]=function(e1,e2,e3,e4,e5,e6)	--6.4.	读键盘(35,x,-1,-1,-1 , -1,-1)
+								--e1=Byte.get16(x50,e1*2)
+								local key=WaitKey();
+								if key==VK_UP then
+									key=158;
+								elseif key==VK_DOWN then
+									key=152;
+								elseif key==VK_LEFT then
+									key=154;
+								elseif key==VK_RIGHT then
+									key=156;
+								end
+								--Byte.set16(x50,e1*2,key);
+								x50[e1]=key;
+							end,
+							[36]=function(e1,e2,e3,e4,e5,e6)	--6.5.	显示字符串并等待击键(36,type,s,x,y ,color,-1)
+								--e2=Byte.get16(x50,e2*2)
+								e3=getvaule(0,e1,e3);
+								e4=getvaule(1,e1,e4);
+								e5=getvaule(2,e1,e5);
+								local str='';
+								for i=0,1000 do
+									--[[
+									local byte=Byte.getu16(x50,e2*2+i)
+									byte=math.fmod(byte,256)
+									if byte>0 then
+										str=str..string.char(byte)
+									else
+										break
+									end
+									]]--
+									local char=x50[e2+i] or 0;
+									if type(char)=='string' then
+										str=str..char;
+									elseif char~=0 then
+										str=str..getchar(char);
+									else
+										break;
+									end
+								end
+								--str=lib.CharSet(str,0);
+								DrawStrBox(e3,e4,str,C_ORANGE,CC.DefaultFont);
+								ShowScreen();
+								--Byte.set16(x50,57344,1);
+								x50[28672]=1;
+								local key=WaitKey();
+								if key==121 or key==VK_SPACE or key==VK_RETURN then
+									--Byte.set16(x50,57344,0);
+									x50[28672]=0;
+								end
+							end,
+							[37]=function(e1,e2,e3,e4,e5,e6)	--6.6.	延时(37,type,n, -1,-1 , -1, -1, -1)
+								e2=getvaule(0,e1,e2);
+								lib.Delay(e2)
+							end,
+							[38]=function(e1,e2,e3,e4,e5,e6)	--6.7.	随机数(38,type, n,x , -1, -1, -1)
+								e2=getvaule(0,e1,e2);
+								--e3=Byte.get16(x50,e3*2)
+								--Byte.set16(x50,e3*2,Rnd(e2));
+								x50[e3]=Rnd(e2);
+							end,
+							[39]=function(e1,e2,e3,e4,e5,e6)	--6.8.	菜单选择(39,type,n,s,r,x,y)
+								e2=getvaule(0,e1,e2);
+								e5=getvaule(1,e1,e5);
+								e6=getvaule(2,e1,e6);
+								local mymenu={};
+								for i=1,e2 do
+									local str='';
+									local start=x50[e3+i-1] or 0--Byte.get16(x50,(e3+i-1)*2)
+									--lib.Debug(i..','..e3..','..start);
+									for i=0,1000 do
+										--[[
+										local byte=Byte.getu16(x50,start*2+i)
+										byte=math.fmod(byte,256)
+										if byte>0 then
+											str=str..string.char(byte)
+										else
+											break
+										end
+										]]--
+										local char=x50[start+i] or 0;
+										if type(char)=='string' then
+											str=str..char;
+										elseif char~=0 then
+											str=str..getchar(char);
+										else
+											break;
+										end
+									end
+                                                                        if CC.TalkString=="0" then
+									   str=lib.CharSet(str,0);
+									end
+
+									--lib.Debug('1+Menu--->'..str);
+									mymenu[i]={str,nil,1};
+								end
+                                                                        if CC.TalkString=="1" then
+									   CC.TalkString="0";	
+									end
+
+								local select;
+								select=ShowMenu(mymenu,e2,e2,e5-5,e6-5,0,0,1,1,CC.DefaultFont,C_ORANGE,C_WHITE)
+								--Byte.set16(x50,e4*2,select)
+								x50[e4]=select;
+							end,
+							[40]=function(e1,e2,e3,e4,e5,e6)
+								e2=getvaule(0,e1,e2);
+								e5=getvaule(1,e1,e5);
+								e6=getvaule(2,e1,e6);
+								local shownum;
+								if e1<0 then
+									e1=65536+e1;
+								end
+								shownum=math.modf(e1/256);
+								local mymenu={};
+								for i=1,e2 do
+									local str='';
+									local start=x50[e3+i-1] or 0--Byte.get16(x50,(e3+i-1)*2)
+									--lib.Debug(i..','..e3..','..start);
+									for i=0,1000 do
+										--[[
+										local byte=Byte.getu16(x50,start*2+i)
+										byte=math.fmod(byte,256)
+										if byte>0 then
+											str=str..string.char(byte)
+										else
+											break
+										end
+										]]--
+										local char=x50[start+i] or 0;
+										if type(char)=='string' then
+											str=str..char;
+										elseif char~=0 then
+											str=str..getchar(char);
+										else
+											break;
+										end
+									end
+									if CC.TalkString=="0" then
+									   str=lib.CharSet(str,0);
+									end
+
+                                                                        if CC.TalkString=="1" then
+									   CC.TalkString="0";	
+									end
+
+									--str=lib.CharSet(str,0);
+									--lib.Debug('2+Menu--->'..str);
+									mymenu[i]={str,nil,1};
+								end
+								local select;
+								local select;
+								select=ShowMenu(mymenu,e2,shownum,e5-5,e6-5,0,0,1,1,CC.DefaultFont,C_ORANGE,C_WHITE)
+								x50[e4]=select;
+							end,
+							[41]=function(e1,e2,e3,e4,e5,e6)	--6.10.	显示图片指令(41,type1,type2,x,y,n,-1)
+								e3=getvaule(0,e1,e3);
+								e4=getvaule(1,e1,e4);
+								e5=getvaule(2,e1,e5);
+								local id;
+								if e2==0 then
+									id=0;
+								elseif e2==1 then
+									id=1;
+									e5=e5*2;
+								end
+								lib.PicLoadCache(id,e5,e3,e4);
+								ShowScreen();
+							end,
+							[42]=function(e1,e2,e3,e4,e5,e6)	--6.11.	改变主地图坐标(42,type,x,y,0,0,0)
+								e2=getvaule(0,e1,e2);
+								e3=getvaule(1,e1,e3);
+								JY.Base['人X']=e2;
+								JY.Base['人Y']=e3;
+							end,
+							[43]=function(e1,e2,e3,e4,e5,e6)	--6.12.	调用其它事件(43,type,n,x1,x2,x3,x4)
+								e2=getvaule(0,e1,e2);
+								e3=getvaule(1,e1,e3);
+								e4=getvaule(2,e1,e4);
+								e5=getvaule(3,e1,e5);
+								e6=getvaule(4,e1,e6);
+								x50[28928]=e3;
+								x50[28929]=e4;
+								x50[28930]=e5;
+								x50[28931]=e6;
+								--Byte.set16(x50,57856,e3);
+								--Byte.set16(x50,57858,e4);
+								--Byte.set16(x50,57860,e5);
+								--Byte.set16(x50,57862,e6);
+								if e2==202 then
+									if e5==0 then
+										instruct_2(e3,e4);
+									end
+									--lib.Debug('得到物品'..e3)
+								elseif e2==542 then--normal
+									lib.PicInit(CONFIG.DataPath..'mmap.col');
+									lib.PicLoadFile(CC.SMAPPicFile[1],CC.SMAPPicFile[2],0);
+									lib.PicLoadFile(CC.HeadPicFile[1],CC.HeadPicFile[2],1);
+								elseif e2==543 then--dream
+									lib.PicInit(CONFIG.DataPath..'dream.col');
+									lib.PicLoadFile(CC.SMAPPicFile[1],CC.SMAPPicFile[2],0);
+									lib.PicLoadFile(CC.HeadPicFile[1],CC.HeadPicFile[2],1);
+								elseif e3==544 then--night
+									lib.PicInit(CONFIG.DataPath..'night.col');
+									lib.PicLoadFile(CC.SMAPPicFile[1],CC.SMAPPicFile[2],0);
+									lib.PicLoadFile(CC.HeadPicFile[1],CC.HeadPicFile[2],1);
+								else
+									ReadKDEF(e2);
+								end
+							end,
+						}
+
+local function NewInstruct_50(code,e1,e2,e3,e4,e5,e6)
+	lib.Debug(string.format('50code::[%d:%d:%d:%d:%d:%d:%d]start:%d',code,e1,e2,e3,e4,e5,e6,lib.GetTime()))
+	newinstruct_50_sub[code](e1,e2,e3,e4,e5,e6)
+	--lib.Debug('50code::['..code..']end:'..lib.GetTime())
+end
+
+	
+	while idx<len do
+		if E[idx]==0 then	--OK
+			Cls()
+			idx=idx+1
+		elseif E[idx]==1 then	--OKing
+			--instruct_1(E[idx+1],E[idx+2],E[idx+3])
+			TalkEx(ReadTALK(E[idx+1]),E[idx+2],E[idx+3])
+			idx=idx+4
+		elseif E[idx]==2 then	--OK
+			instruct_2(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==3 then	--OK
+			instruct_3(
+							E[idx+1],E[idx+2],E[idx+3],
+							E[idx+4],E[idx+5],E[idx+6],
+							E[idx+7],E[idx+8],E[idx+9],
+							E[idx+10],E[idx+11],E[idx+12],
+							E[idx+13]
+						)
+			idx=idx+14
+		elseif E[idx]==4 then	--OK
+			if instruct_4(E[idx+1]) then
+				idx=idx+E[idx+2]
+			else
+				idx=idx+E[idx+3]
+			end
+			idx=idx+4
+		elseif E[idx]==5 then	--OK
+			if instruct_5() then
+				idx=idx+E[idx+1]
+			else
+				idx=idx+E[idx+2]
+			end
+			idx=idx+3
+		elseif E[idx]==6 then	--OK
+			if WarMain(E[idx+1],E[idx+4]) then
+				idx=idx+E[idx+2]
+			else
+				idx=idx+E[idx+3]
+			end
+			idx=idx+5
+		elseif E[idx]==7 then	--OK
+			idx=idx+1
+			break
+		elseif E[idx]==8 then	--OK
+			instruct_8(E[idx+1])
+			idx=idx+2
+		elseif E[idx]==9 then	--OK
+			if instruct_9() then
+				idx=idx+E[idx+1]
+			else
+				idx=idx+E[idx+2]
+			end
+			idx=idx+3
+		elseif E[idx]==10 then	--OK
+			instruct_10(E[idx+1])
+			idx=idx+2
+		elseif E[idx]==11 then	--OK
+			if instruct_11() then
+				idx=idx+E[idx+1]
+			else
+				idx=idx+E[idx+2]
+			end
+			idx=idx+3
+		elseif E[idx]==12 then	--OK
+			instruct_12()
+			idx=idx+1
+		elseif E[idx]==13 then	--OK
+			instruct_13()
+			idx=idx+1
+		elseif E[idx]==14 then	--OK
+			instruct_14()
+			idx=idx+1
+		elseif E[idx]==15 then	--OK
+			instruct_15()
+			idx=idx+2
+		elseif E[idx]==16 then	--OK
+			if instruct_16(E[idx+1]) then
+				idx=idx+E[idx+2]
+			else
+				idx=idx+E[idx+3]
+			end
+			idx=idx+4
+		elseif E[idx]==17 then	--OK
+			instruct_17(E[idx+1],E[idx+2],E[idx+3],
+						E[idx+4],E[idx+5])
+			idx=idx+6
+		elseif E[idx]==18 then	--OK
+			if instruct_18(E[idx+1]) then
+				idx=idx+E[idx+2]
+			else
+				idx=idx+E[idx+3]
+			end
+			idx=idx+4
+		elseif E[idx]==19 then	--OK
+			instruct_19(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==20 then	--OK
+			if instruct_20() then
+				idx=idx+E[idx+1]
+			else
+				idx=idx+E[idx+2]
+			end
+			idx=idx+3
+		elseif E[idx]==21 then	--OK
+			instruct_21(E[idx+1])
+			idx=idx+2
+		elseif E[idx]==22 then	--OK
+			instruct_22()
+			idx=idx+1
+		elseif E[idx]==23 then	--OK
+			instruct_23(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==24 then	--OK
+			instruct_24()
+			idx=idx+1
+		elseif E[idx]==25 then	--OK
+			instruct_25(E[idx+1],E[idx+2],E[idx+3],E[idx+4])
+			idx=idx+5
+		elseif E[idx]==26 then	--OK
+			instruct_26(E[idx+1],E[idx+2],E[idx+3],
+						E[idx+4],E[idx+5])
+			idx=idx+6
+		elseif E[idx]==27 then	--OK
+			instruct_27(E[idx+1],E[idx+2],E[idx+3])
+			idx=idx+4
+		elseif E[idx]==28 then	--OK
+			if instruct_28(E[idx+1],E[idx+2],E[idx+3]) then
+				idx=idx+E[idx+4]
+			else
+				idx=idx+E[idx+5]
+			end
+			idx=idx+6
+		elseif E[idx]==29 then	--OK
+			if instruct_29(E[idx+1],E[idx+2],E[idx+3]) then
+				idx=idx+E[idx+4]
+			else
+				idx=idx+E[idx+5]
+			end
+			idx=idx+6
+		elseif E[idx]==30 then	--OK
+			instruct_30(E[idx+1],E[idx+2],E[idx+3],E[idx+4])
+			idx=idx+5
+		elseif E[idx]==31 then	--OK
+			if instruct_31(E[idx+1]) then
+				idx=idx+E[idx+2]
+			else
+				idx=idx+E[idx+3]
+			end
+			idx=idx+4
+		elseif E[idx]==32 then	--OK
+			instruct_32(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==33 then	--OK
+			instruct_33(E[idx+1],E[idx+2],E[idx+3])
+			idx=idx+4
+		elseif E[idx]==34 then	--OK
+			instruct_34(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==35 then	--OK
+			instruct_35(E[idx+1],E[idx+2],E[idx+3],E[idx+4])
+			idx=idx+5
+		elseif E[idx]==36 then	--OK
+			if E[idx+1]<256 then
+				if instruct_36(E[idx+1]) then
+					idx=idx+E[idx+2]
+				else
+					idx=idx+E[idx+3]
+				end
+			else
+				local tzflag=x50[28672] or 0;--Byte.get16(x50,57344)
+				if tzflag==0 then
+					idx=idx+E[idx+2]
+				elseif tzflag==1 then
+					idx=idx+E[idx+3]
+				end
+			end
+			idx=idx+4
+		elseif E[idx]==37 then	--OK
+			instruct_37(E[idx+1])
+			idx=idx+2
+		elseif E[idx]==38 then	--OK
+			instruct_38(E[idx+1],E[idx+2],E[idx+3],E[idx+4])
+			idx=idx+5
+		elseif E[idx]==39 then	--OK
+			instruct_39(E[idx+1])
+			idx=idx+2
+		elseif E[idx]==40 then	--OK
+			instruct_40(E[idx+1])
+			idx=idx+2
+		elseif E[idx]==41 then	--OK
+			instruct_41(E[idx+1],E[idx+2],E[idx+3])
+			idx=idx+4
+		elseif E[idx]==42 then	--OK
+			if instruct_42() then
+				idx=idx+E[idx+1]
+			else
+				idx=idx+E[idx+2]
+			end
+			idx=idx+3
+		elseif E[idx]==43 then	--OK
+			if instruct_43(E[idx+1]) then
+				idx=idx+E[idx+2]
+			else
+				idx=idx+E[idx+3]
+			end
+			idx=idx+4
+		elseif E[idx]==44 then	--OK
+			instruct_44(E[idx+1],E[idx+2],E[idx+3],
+						E[idx+4],E[idx+5],E[idx+6])
+			idx=idx+7
+		elseif E[idx]==45 then
+			instruct_45(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==46 then
+			instruct_46(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==47 then
+			instruct_47(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==48 then
+			instruct_48(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==49 then
+			instruct_49(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==50 then
+			if E[idx+1]>128 then
+				if instruct_50(E[idx+1],E[idx+2],E[idx+3],E[idx+4],E[idx+5]) then
+					idx=idx+E[idx+6];
+				else
+					idx=idx+E[idx+7];
+				end
+			else
+				NewInstruct_50(E[idx+1],E[idx+2],E[idx+3],E[idx+4],
+								E[idx+5],E[idx+6],E[idx+7])
+			end
+			idx=idx+8
+		elseif E[idx]==51 then
+			instruct_51()
+			idx=idx+1
+		elseif E[idx]==52 then
+			instruct_52()
+			idx=idx+1
+		elseif E[idx]==53 then
+			instruct_53()
+			idx=idx+1
+		elseif E[idx]==54 then
+			instruct_54()
+			idx=idx+1
+		elseif E[idx]==55 then	--OK
+			if instruct_55(E[idx+1],E[idx+2]) then
+				idx=idx+E[idx+3]
+			else
+				idx=idx+E[idx+4]
+			end
+			idx=idx+5
+		elseif E[idx]==56 then
+			instruct_56(E[idx+1])
+			idx=idx+2
+		elseif E[idx]==57 then
+			instruct_57()
+			idx=idx+1
+		elseif E[idx]==58 then
+			instruct_58()
+			idx=idx+1
+		elseif E[idx]==59 then
+			instruct_59()
+			idx=idx+1
+		elseif E[idx]==60 then
+			if instruct_60(E[idx+1],E[idx+2],E[idx+3]) then
+				idx=idx+E[idx+4]
+			else
+				idx=idx+E[idx+5]
+			end
+			idx=idx+6
+		elseif E[idx]==61 then
+			if instruct_61() then
+				idx=idx+E[idx+1]
+			else
+				idx=idx+E[idx+2]
+			end
+			idx=idx+3
+		elseif E[idx]==62 then
+			instruct_62(E[idx+1],E[idx+2],E[idx+3],E[idx+4],E[idx+5],E[idx+6])
+			idx=idx+7
+		elseif E[idx]==63 then	--OK
+			instruct_63(E[idx+1],E[idx+2])
+			idx=idx+3
+		elseif E[idx]==64 then
+			instruct_64()
+			idx=idx+1
+		elseif E[idx]==65 then
+			instruct_65()
+			idx=idx+1
+		elseif E[idx]==66 then
+			instruct_66(E[idx+1])
+			idx=idx+2
+		elseif E[idx]==67 then
+			instruct_67(E[idx+1])
+			idx=idx+2
+		else
+			break
+		end
+	end
+end
+
+
+function ReadTALK(id,flag)
+
+  local str=''   
+
+  str=ReadTalk(id); --调用鱼大的函数
+
+  if CC.TalkString=="0" then 
+    str=GenTalkString(str,12);
+  else
+    CC.TalkString="0";
+  end
+
+  return str;
+
+end
+
+function Crack(E,len)
+	local C={
+				[0]=15,19,3,67,12,28,55,37,47,36,
+				61,49,32,2,45,51,21,11,46,64,
+				9,25,26,14,43,1,59,54,34,62,
+				27,18,53,44,42,58,10,7,6,16,
+				8,63,39,13,31,20,52,22,30,33,
+				48,56,50,24,65,29,41,38,4,5,
+				35,0,57,60,66,23,17,40,
+			};
+	for i=0,len-1 do
+		local v=E[i];
+		if C[v] then
+			E[i]=C[v];
+		end
+	end
+end

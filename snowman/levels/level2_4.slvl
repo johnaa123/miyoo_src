@@ -1,0 +1,55 @@
+[head]
+# all coordinates are zero-based!
+music           = ./sounds/Funkorama.ogg
+width           = 61
+height          = 14
+startx          = 30
+starty          =  7
+backgroundcolor = (  0,192,127)
+havetokill      =  3
+failback        = ./levels/level2.slvl
+#startzoom       =  20.0
+[symbols]
+# symbol object-file                     color         form   measures (l,b,r,t)   function
+  '#'    ./data/cube.obj                 (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'T'    ./data/cube_nolrsites.obj       (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  't'    ./data/cube_nolrsites_small.obj (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '%'    ./data/cube_noudsites.obj       (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '!'    ./data/cube_nolrudsites.obj     (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '^'    ./data/cube_nolrusites.obj      (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '_'    ./data/cube_nolrdsites.obj      (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '}'    ./data/cube_noludsites.obj      (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '{'    ./data/cube_norudsites.obj      (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '|'    ./data/tree_stem.obj            (140,127,  0) quad   (-3.0,-1.0, 3.0, 3.0) none
+  '|'    ./data/tree_crown.obj           (31 ,255, 31) quad   (-3.0,-1.0, 3.0, 3.0) none
+  ']'    ./data/cube_nolsites.obj      (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '['    ./data/cube_norsites.obj      (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'U'    ./data/cube_nousites.obj      (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '"'    ./data/cube_nodsites.obj      (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '?'    none                            (31 ,255, 31) quad   (-1.0, 0.0, 1.0, 1.0) none
+  '*'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) snow
+  'o'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) easysnow
+  'O'    ./data/door.obj                 (114,125,130) none   (-1.0,-1.0, 1.0, 1.0) load(./levels/play.slvl),-30
+  '<'    ./data/arrow_left.obj           (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) left
+  '>'    ./data/arrow_right.obj          (127,127,127) quad   (-1.0,-1.0, 1.0, 1.0) right
+  'e'    enemy4                          ( 63, 63, 63) none   (-4.5,-3.0, 4.5, 3.0) waywalker,weapon=2,health=70,shotfq=500
+  'h'    enemy4                          ( 63, 63, 63) none   (-4.5,-3.0, 4.5, 3.0) standing,weapon=2,health=70,shotfq=200
+  'B'    ./data/broom.obj                (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) broom
+  'C'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "Be fast!"
+
+[layer1]
+'                                                             '
+'                          oooo oooo                          '
+'**********oo  h     oo    ooooOoooo    oo     h  oo**********'
+'**********oo        oo    [TTTTTTT]    oo        oo**********'
+'**********[TTTT]    []    <   C   >    []    [TTTT]**********'
+'**********      **********<*******>**********      **********'
+'*****[TTTT]     **********<*******>**********     [TTTT]*****'
+'******************[TTTT]**<*******>**[TTTT]**          ******'
+'**************************[TTTTTTT]**************************'
+'[TTTT]*************************************************[TTTT]'
+'      ******* ** ** ** ** ** *** ** ** ** ** ** *******      '
+'     [TTTT]**o**o**o**o**o**o***o**o**o**o**o**o**[TTTT]     '
+'           ** ** ** ** ** **  e  ** ** ** ** ** **           '
+'          [^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^]          '
+[end]

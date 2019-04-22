@@ -1,0 +1,131 @@
+[head]
+# all coordinates are zero-based!
+music           = ./sounds/Cold Funk.ogg
+width           = 40
+height          = 24
+startx          = 2
+starty          = 7
+backgroundcolor = (63,127,255)
+havetokill      =  18
+failback        = ./levels/level1.slvl
+#startzoom       =  20.0
+[symbols]
+# symbol object-file                     color         form   measures (l,b,r,t)   function
+  '#'    ./data/cube.obj                 (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'T'    ./data/cube_nolrsites.obj       (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  't'    ./data/cube_nolrsites_small.obj (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '%'    ./data/cube_noudsites.obj       (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '!'    ./data/cube_nolrudsites.obj     (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '^'    ./data/cube_nolrusites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '_'    ./data/cube_nolrdsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '}'    ./data/cube_noludsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '{'    ./data/cube_norudsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  ']'    ./data/cube_nolsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '['    ./data/cube_norsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'U'    ./data/cube_nousites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '"'    ./data/cube_nodsites.obj      (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '|'    ./data/tree_stem.obj            (140,127,  0) quad   (-3.0,-1.0, 3.0, 3.0) none
+  '|'    ./data/tree_crown.obj           (31 ,255, 31) quad   (-3.0,-1.0, 3.0, 3.0) none
+  '?'    none                            (31 ,255, 31) quad   (-1.0, 0.0, 1.0, 1.0) none
+  '*'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) snow
+  'o'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) easysnow
+  'O'    ./data/door.obj                 (114,125,130) none   (-1.0,-1.0, 1.0, 1.0) load(./levels/level1_3.slvl),-13
+  '<'    ./data/arrow_left.obj           (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) left
+  '>'    ./data/arrow_right.obj          (223,245,255) quad   (-1.0,-1.0, 1.0, 1.0) right
+  'a'    enemy0                          (32,  32, 32) none   (-1.0,-1.0, 1.0, 1.0) waywalker,health=1
+  'b'    enemy0                          (32 , 32, 32) none   (-1.3,-1.3, 1.3, 1.3) waywalker,health=2
+  'c'    enemy2                          (255,230,  0) none   (-1.5,-1.5, 1.5, 1.5) waywalker,health=3
+  'd'    enemy2                          (255,230,  0) none   (-1.8,-1.8, 1.8, 1.8) waywalker,health=4
+  'B'    ./data/broom.obj                (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) broom
+  'C'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "If you enter"
+  'D'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "a new level"
+  'E'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "you lose your"
+  'F'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "big belly and"
+  'G'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "your broom."
+  'H'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "These coals have"
+  'I'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "more health."
+  'J'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "Be careful!"
+
+[layer0]
+# best viewed with a font, where width=height
+# 1 of 3 layers
+# in the background
+'   C                                    '
+'   D                                    '
+'   E                                    '
+'   F                                    '
+'   G                                    '
+'                                        '
+'                                        '
+'                 H                      '
+'                 I                      '
+'                 J                      '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+[layer1]
+# 2 of 3 layers
+# the "game"-layer. With collision!
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'[TTT]**[TT]**[TTTT]**[TTT]**[TTT]**[TTT]'
+'%    **%   **%     **%    **%    **%    '
+'%    **%   **%     **%    **%    **%   O'
+'{TTTTTT]  **[}    **[}   **[}   **[}  o#'
+'%***      ** %    ** %   ** %   ** %  o%'
+'%***a    a** %    ** %   ** %   ** %  o%'
+'{TTTTTTTTTTTT]   **# %  **# %  **# %o [}'
+'%***             **  %  **  %  **  %o  %'
+'%***b     b     b**  %  **  %  **  %o  %'
+'{TTTTTTTTTTTTTTTTTTTT] **#  % **#  {] o%'
+'%***                   **   % **   %  o%'
+'%***c     c     c     c**   % **   %  o%'
+'{TTTTTTTTTTTTTTTTTTTTTTTTTTT]**#   %o [}'
+'%***                         **    %o  %'
+'%***d     c     d     c     d**    %o  %'
+'%**[TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT] o%'
+'%**                                   o%'
+'%** a     b     c     d               o%'
+'!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT!'
+[layer2]
+# 3 of 3 layers
+# in the foreground
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+[end]

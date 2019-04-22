@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Liero
+Comment=Earthworm action game
+Exec=liero.elf
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=liero
+X-OD-Manual=README.md
+Categories=games;

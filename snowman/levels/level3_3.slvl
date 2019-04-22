@@ -1,0 +1,86 @@
+[head]
+# all coordinates are zero-based!
+music           = ./sounds/RetroFuture Clean.ogg
+width           = 212
+height          = 27
+startx          =  0
+starty          = 10
+backgroundcolor = (220,220,120)
+havetokill      =  15
+failback        = ./levels/level3.slvl
+nomap           = true
+#startzoom       =  20.0
+[symbols]
+# symbol object-file                     color         form   measures (l,b,r,t)   function
+  '#'    ./data/cube.obj                 ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'T'    ./data/cube_nolrsites.obj       ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '%'    ./data/cube_noudsites.obj       ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '!'    ./data/cube_nolrudsites.obj     ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '^'    ./data/cube_nolrusites.obj      ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '_'    ./data/cube_nolrdsites.obj      ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '{'    ./data/cube_norudsites.obj      ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '}'    ./data/cube_noludsites.obj      ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '|'    ./data/tree_stem.obj            (140,127,  0) quad   (-3.0,-1.0, 3.0, 3.0) none
+  '|'    ./data/tree_crown.obj           (31 ,255, 31) quad   (-3.0,-1.0, 3.0, 3.0) none
+  '['    ./data/cube_norsites.obj      ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  ']'    ./data/cube_nolsites.obj      ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'U'    ./data/cube_nousites.obj      ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '"'    ./data/cube_nodsites.obj      ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '?'    none                            (31 ,255, 31) quad   (-1.0, 0.0, 1.0, 1.0) none
+  '*'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) snow
+  'o'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) easysnow
+  'O'    ./data/door.obj                 (114,125,130) none   (-1.0,-1.0, 1.0, 1.0) load(./levels/level3_4.slvl),-34
+  '<'    ./data/arrow_left.obj           ( 64,192, 64) quad   (-1.0,-1.0, 1.0, 1.0) left
+  '>'    ./data/arrow_right.obj          (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) right
+  'a'    enemy0                          (32,  32, 32) none   (-1.0,-1.0, 1.0, 1.0) waywalker,health=1
+  'b'    enemy1                          (  0,  0,255) none   (-1.0,-1.0, 1.0, 1.0) waywalker,health=1,weapon=1,shotfq=1000
+  'c'    enemy2                          (255,230,  0) none   (-1.5,-1.5, 1.5, 1.5) waywalker,health=3
+  'd'    enemy3                          ( 32, 32,  0) none   (-1.0,-1.0, 1.0, 1.0) waywalker,weapon=1,health=3,shotfq=750
+  'e'    enemy4                          ( 63, 63, 63) none   (-1.5,-1.0, 1.5, 1.0) waywalker,weapon=2,health=1,shotfq=1500
+  'f'    enemy5                          (128,128,128) none   (-1.3,-1.3, 1.3, 1.3) waywalker,weapon=2,health=3,shotfq=1000
+  'h'    enemy4                          ( 63, 63, 63) none   (-1.5,-1.0, 1.5, 1.0) waywalker,weapon=2,health=1,shotfq=500
+  'i'    enemy4                          ( 63, 63, 63) none   (-1.5,-1.0, 1.5, 1.0) standing,weapon=2,health=1,shotfq=1500
+  'j'    enemy4                          ( 63, 63, 63) none   (-1.5,-1.0, 1.5, 1.0) standing,weapon=2,health=1,shotfq=500
+  'B'    ./data/broom.obj                (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) broom
+  'C'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "Dummy Text"
+
+  '1'    ./data/cube_noudsites.obj       (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '2'    ./data/cube_nolrudsites.obj     (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '3'    ./data/cube_nolrusites.obj      (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '4'    ./data/cube_nolrdsites.obj      (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '5'    ./data/cube_norudsites.obj      (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '6'    ./data/cube_noludsites.obj      (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '7'    ./data/cube_norsites.obj      (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '8'    ./data/cube_nolsites.obj      (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '9'    ./data/cube.obj                 (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) none
+  't'    ./data/cube_nolrsites.obj       (190, 77,  0) quad   (-1.0,-1.0, 1.0, 1.0) none
+
+[layer1]
+'                     o*o                                                                       *              ***                                                                                                   '
+'                     ***                                                                      ***             * *                  **                                                                               '
+'                     o*o                                                         d      d      *              ***           j     ****                                                                              '
+'                      9                                        ***               7tttttt8   7tt8               9                   **                                                         78                    '
+'               o*o  ****                                       *i*            ***              *            *  *  *        7t8    7tt8                                      *                726                    '
+'               ***  *o***             **                       ***            * *             ***          *********                       jjj                             ***              7226                    '
+'               o*o  ****    **        **       c                9             ***              *       B    *  *  *                                                         *              72226             738    '
+'                9   7ttt8   **        **      []        "  "          **      7t8      ***     9     7t8    9  9  9     9          78      9  9          78  9            7tt8            722226             526    '
+'o*o                         **        []      {}        % [}         o**o             o***o                                               78  78        726  58                          7222226            74448   '
+'***                         []        {}      {}        %  %        oo**oo           oo***oo                                             728  728      7226  528     []              [] 72222226            >> 56   '
+'o*o                     aaa {}    b   {}   h  {}        %  %      hoo    oo    h    oo     ooc   **     f   **    c   **     f    **    7228  7228    72226  5228    {}              {}322222226        9   >>O56   '
+'733333333333333333333333333322333333332233333322333333338  53333333338  733333333333338   73333333333333333333333333333333333333333333332222332222333322226  5222333322333333333333332222222222233333333333333333338'
+'74444444444444444444444444444444444444444444444444444428  744444444446  744444444444448   74444444444444444444444444444444444444444444444444444444444444448  7444444444444444444444444444444444444444444444444444448'
+'                                                      6              1                                                                                                                                              '
+'                                                      6              1                                                                                                                                              '
+'                                                      6 *            1                                                                                                                                              '
+'                                                      6 #   *        1                                                                                                                                              '
+'                                                      6     #    *   1                                                                                                                                              '
+'                                                      6          #   1                                                                                                                                              '
+'                                                      6   *******    1                                                                                                                                              '
+'                                                      6   *******   [6                                                                                                                                              '
+'                                                      6   *******    1                                                                                                                                              '
+'                                                      6   7333338    1                                                                                                                                              '
+'                                                      6ooo5222226oo[^}                                                                                                                                              '
+'                                                      6ooo5222226oo{!}                                                                                                                                              '
+'                                                      2333222222233226                                                                                                                                              '
+'                                                      2222222222222226                                                                                                                                              '
+[end]

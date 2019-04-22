@@ -1,0 +1,4 @@
+#!/bin/sh
+echo -n 1 > /proc/sys/vm/overcommit_memory
+./eduke32 -usecwd -game_dir ./
+echo -n 0 > /proc/sys/vm/overcommit_memory

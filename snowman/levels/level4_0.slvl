@@ -1,0 +1,185 @@
+[head]
+# all coordinates are zero-based!
+music           = ./sounds/Stringed Disco.ogg
+width           = 40
+height          = 40
+startx          = 18
+starty          = 22
+backgroundcolor = (255,181,234)
+havetokill      = 33
+failback        = ./levels/level4.slvl
+#startzoom       =  20.0
+[symbols]
+# symbol object-file                     color         form   measures (l,b,r,t)   function
+  '#'    ./data/cube.obj                 (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'T'    ./data/cube_nolrsites.obj       (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  't'    ./data/cube_nolrsites_small.obj (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '%'    ./data/cube_noudsites.obj       (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '!'    ./data/cube_nolrudsites.obj     (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '^'    ./data/cube_nolrusites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '_'    ./data/cube_nolrdsites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '}'    ./data/cube_noludsites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '{'    ./data/cube_norudsites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  ']'    ./data/cube_nolsites.obj        (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '['    ./data/cube_norsites.obj        (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'U'    ./data/cube_nousites.obj        (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '"'    ./data/cube_nodsites.obj        (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '|'    ./data/tree_stem.obj            (140,127,  0) quad   (-3.0,-1.0, 3.0, 3.0) none
+  '|'    ./data/tree_crown.obj           (31 ,255, 31) quad   (-3.0,-1.0, 3.0, 3.0) none
+  '?'    none                            (31 ,255, 31) quad   (-1.0, 0.0, 1.0, 1.0) none
+  '*'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) snow
+  '+'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) easysnow
+  'O'    ./data/door.obj                 (255,165,  0) none   (-1.0,-1.0, 1.0, 1.0) load(./levels/level4_1.slvl),-41
+  '<'    ./data/arrow_left.obj           (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) left
+  '>'    ./data/arrow_right.obj          (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) right
+  'a'    enemy0                          (32,  32, 32) none   (-1.0,-1.0, 1.0, 1.0) waywalker,health=1
+  'b'    enemy1                          (  0,  0,255) none   (-1.0,-1.0, 1.0, 1.0) waywalker,health=1,weapon=1,shotfq=1000
+  'c'    enemy2                          (255,230,  0) none   (-1.5,-1.5, 1.5, 1.5) waywalker,health=3
+  'd'    enemy3                          ( 32, 32,  0) none   (-1.0,-1.0, 1.0, 1.0) waywalker,weapon=1,health=3,shotfq=750
+  'e'    enemy4                          ( 63, 63, 63) none   (-1.5,-1.0, 1.5, 1.0) waywalker,weapon=2,health=1,shotfq=1500
+  'f'    enemy5                          (128,128,128) none   (-1.3,-1.3, 1.3, 1.3) waywalker,weapon=2,health=3,shotfq=1000
+  'h'    enemy4                          ( 63, 63, 63) none   (-1.5,-1.0, 1.5, 1.0) waywalker,weapon=2,health=1,shotfq=500
+  'i'    enemy4                          ( 63, 63, 63) none   (-1.5,-1.0, 1.5, 1.0) standing,weapon=2,health=1,shotfq=1500
+  'j'    enemy4                          ( 63, 63, 63) none   (-1.5,-1.0, 1.5, 1.0) standing,weapon=2,health=1,shotfq=500
+  'k'    enemy6                          (255,255,127) none   (-1.0,-1.0, 1.0, 1.0) waywalker,health=1
+  'l'    enemy6                          (255,255,127) none   (-1.5,-1.5, 1.5, 1.5) waywalker,health=2,pissed=2
+  'm'    enemy6                          (255,255,127) none   (-2.0,-2.0, 2.0, 2.0) waywalker,health=3,pissed=3
+  'n'    enemy6                          (255,255,127) none   (-2.5,-2.5, 2.5, 2.5) waywalker,health=4,pissed=4
+  'o'    enemy6                          (255,255,127) none   (-1.0,-1.0, 1.0, 1.0) waywalker,health=1,weapon=2,shotfq=1000
+  'p'    enemy6                          (255,255,127) none   (-1.5,-1.5, 1.5, 1.5) waywalker,health=2,weapon=2,shotfq=800,pissed=2
+  'q'    enemy6                          (255,255,127) none   (-2.0,-2.0, 2.0, 2.0) waywalker,health=3,weapon=2,shotfq=600,pissed=3
+  'r'    enemy6                          (255,255,127) none   (-2.5,-2.5, 2.5, 2.5) waywalker,health=4,weapon=2,shotfq=400,pissed=4
+  'C'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "Pissed snow may break..."
+  'B'    ./data/broom.obj                (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) broom
+ 
+[layer0]
+# best viewed with a font, where width=height
+# 1 of 3 layers
+# in the background
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                  C                     '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+[layer1]
+# 2 of 3 layers
+# the "game"-layer. With collision!
+'!______________________________________!'
+'}                                      {'
+'}                                      {'
+'}O + + + + + + +q+ + + + + + + + + +   {'
+'!TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT]   {'
+'}                                  %  *{'
+'}                                  %  *{'
+'}**********************************%  [!'
+'}   [TTTTTTTTTTTTTTTTTTTTTTTTTT]   %   {'
+'}  *%                          %  *%*  {'
+'}  *%                          %  *%*  {'
+'}  [%**************************%  [!]  {'
+'}   %   [TTTTTTTTTTTTTTTTTT]   %   %   {'
+'}*  %  *%                  %  *%*  %  *{'
+'}*  %  *%                  %  *%*  %  *{'
+'!]  %  [}******************%  [!]  %  [!'
+'}   %   %   [TTTTTTTTTT]   %   %   %   {'
+'}  *%*  %  *%          %  *%*  %  *%*  {'
+'}  *%*  %  *%          %  *%*  %  *%*  {'
+'}  [!]  %  [}**********%  [!]  %  [!]  {'
+'}   %   %   %   [TT]   %   %   %   %   {'
+'}*  %  *%*  %   %      %*  %  *%*  %  *{'
+'}*  %  *%*  %  *%******%*  %  *%*  %  *{'
+'!]  %  [!]  %  [_TTTTTT_]  %  [!]  %  [!'
+'}   %   %   %              %   %   %   {'
+'}  *%*  %  *%              %*  %  *%*  {'
+'}  *%*  %  *%      k       %*  %  *%*  {'
+'}  [!]  %  [_TTTTTTTTTTTTTT_]  %  [!]  {'
+'}   %   %                      %   %   {'
+'}*  %  *%                      %*  %  *{'
+'}*  %  *%          l           %*  %  *{'
+'!]  %  [_TTTTTTTTTTTTTTTTTTTTTT_]  %  [!'
+'}   %                              %   {'
+'}  *%                              %*  {'
+'}  *%              m               %*  {'
+'}  [_TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT_]  {'
+'}                                      {'
+'}                                      {'
+'}                  n                   {'
+'!^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^!'
+[layer2]
+# 3 of 3 layers
+# in the foreground
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+[end]

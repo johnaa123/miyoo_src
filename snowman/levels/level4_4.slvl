@@ -1,0 +1,126 @@
+[head]
+# all coordinates are zero-based!
+music           = ./sounds/Stringed Disco.ogg
+width           = 40
+height          = 40
+startx          = 20
+starty          = 0
+backgroundcolor = (255,181,234)
+havetokill      =  92
+failback        = ./levels/level4.slvl
+#startzoom       =  20.0
+[symbols]
+# symbol object-file                     color         form   measures (l,b,r,t)   function
+  '#'    ./data/cube.obj                 (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'T'    ./data/cube_nolrsites.obj       (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  't'    ./data/cube_nolrsites_small.obj (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '%'    ./data/cube_noudsites.obj       (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '!'    ./data/cube_nolrudsites.obj     (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '^'    ./data/cube_nolrusites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '_'    ./data/cube_nolrdsites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '}'    ./data/cube_noludsites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '{'    ./data/cube_norudsites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '|'    ./data/tree_stem.obj            (140,127,  0) quad   (-3.0,-1.0, 3.0, 3.0) none
+  '|'    ./data/tree_crown.obj           (31 ,255, 31) quad   (-3.0,-1.0, 3.0, 3.0) none
+  ']'    ./data/cube_nolsites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '['    ./data/cube_norsites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  'U'    ./data/cube_nousites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '"'    ./data/cube_nodsites.obj      (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) none
+  '?'    none                            (31 ,255, 31) quad   (-1.0, 0.0, 1.0, 1.0) none
+  '*'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) snow
+  '+'    none                            (255,255,255) none   (-1.0,-1.0, 1.0, 1.0) easysnow
+  'O'    ./data/door.obj                 (114,125,130) none   (-1.0,-1.0, 1.0, 1.0) load(./levels/finish.slvl)
+  '<'    ./data/arrow_left.obj           (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) left
+  '>'    ./data/arrow_right.obj          (255,255, 84) quad   (-1.0,-1.0, 1.0, 1.0) right
+  'a'    enemy6                          (255,255,127) none   (-1.0,-1.0, 1.0, 1.0) waywalker,health=1,weapon=1,shotfq=600,pissed=1
+  'b'    enemy6                          (255,255,127) none   (-1.5,-1.5, 1.5, 1.5) waywalker,health=2,weapon=1,shotfq=500,pissed=2 
+  'c'    enemy6                          (255,255,127) none   (-2.0,-2.0, 2.0, 2.0) waywalker,health=3,weapon=1,shotfq=400,pissed=3
+  'd'    enemy6                          (255,255,127) none   (-2.5,-2.5, 2.5, 2.5) waywalker,health=4,weapon=1,shotfq=300,pissed=4
+  'e'    enemy6                          (255,255,127) none   (-3.0,-3.0, 3.0, 3.0) waywalker,health=5,weapon=2,shotfq=200,pissed=5
+  'f'    enemy6                          (255,255,127) none   (-3.5,-3.5, 3.5, 3.5) waywalker,health=6,weapon=2,shotfq=100,pissed=6
+  'B'    ./data/broom.obj                (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) broom
+  'C'    text                            (86,  22,  0) none   (-1.0,-1.0, 1.0, 1.0) "Dummy Text"
+
+[layer0]
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'         t                    t         '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+'                                        '
+[layer1]
+'"]                                    ["'
+'U*#                                  #*U'
+' "*[]                              []*" '
+' U***#                            #***U '
+'  "***[]                        []***"  '
+'  U*****#                      #*****U  '
+'   "*    []                  []    *"   '
+'   U*      #****************#      *U   '
+'    "*      []************[]      *"    '
+'    U*         **********         *U    '
+'     "*        []******[]        *"     '
+'     U*          "****"          *U     '
+'      "++++++++++%****%++++++++++"      '
+'      U+++++d++++%****%++++d+++++U      '
+'       "]*[TTTTT^_TTTT_^TTTTT]*["       '
+'       U********U++++++U********U       '
+'        "******++++++++++******"        '
+'        U****#************#****U        '
+'         "*[]**************[]*"         '
+'         {"******************[}         '
+'        [_}******************{_]        '
+'       #**U******************U**#       '
+'     []****#*****#****#*****#****[]     '
+'    "******************************"    '
+'  [T} **************************** {T]  '
+' "  %O*******e************e*******O%  " '
+'[_TT_TTTTTTTT^TTTTTTTTTTTT^TTTTTTTT_TT_]'
+'             U            U             '
+'              "          "              '
+'              U          U              '
+'               "        "               '
+'               U        U               '
+'                "      "                '
+'                U      U                '
+'                 "    "                 '
+'                 U    U                 '
+'                  "  "                  '
+'                  U  U                  '
+'                   ""                   '
+'                   UU                   '
+[end]

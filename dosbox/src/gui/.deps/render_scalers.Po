@@ -1,0 +1,127 @@
+render_scalers.o: render_scalers.cpp ../../include/dosbox.h \
+ ../../config.h ../../include/logging.h ../../include/render.h \
+ ../../include/../src/gui/render_scalers.h ../../include/video.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/string.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/features.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h \
+ /opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stddef.h \
+ render_templates.h render_simple.h render_loops.h render_templates_hq.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/stdlib.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cstdlib \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/c++config.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/os_defines.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/cpu_defines.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdlib.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitflags.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitstatus.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/endian.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/types.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/time.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/select.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/select.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/sysmacros.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/alloca.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/std_abs.h \
+ render_templates_hq2x.h render_templates_hq3x.h render_templates_sai.h
+
+../../include/dosbox.h:
+
+../../config.h:
+
+../../include/logging.h:
+
+../../include/render.h:
+
+../../include/../src/gui/render_scalers.h:
+
+../../include/video.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/string.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/features.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h:
+
+/opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stddef.h:
+
+render_templates.h:
+
+render_simple.h:
+
+render_loops.h:
+
+render_templates_hq.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/stdlib.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cstdlib:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/c++config.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/os_defines.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/cpu_defines.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdlib.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitflags.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitstatus.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/endian.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/types.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/time.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/select.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/select.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/sysmacros.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/alloca.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/std_abs.h:
+
+render_templates_hq2x.h:
+
+render_templates_hq3x.h:
+
+render_templates_sai.h:

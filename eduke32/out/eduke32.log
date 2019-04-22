@@ -1,0 +1,37 @@
+EDuke32 2.0.0devel 20100727
+Application parameters: -usecwd -game_dir ./ 
+Using /home/steward/Downloads/eduke32/out/ for game data
+Using / for game data
+Initializing SDL system interface (compiled against SDL version 1.2.15, found version 1.2.15)
+Using "x11" video driver
+No fullscreen modes available!
+Searching for game data...
+ Checksumming duke3d.grp... Done
+Using /home/steward/Downloads/eduke32/out/ for game data
+Using 'duke3d.grp' as main game data file.
+Using file './/duke3d.grp' as game data.
+Compiling: GAME.CON (151133 bytes)
+Including: DEFS.CON (35992 bytes)
+Including: USER.CON (45449 bytes)
+GAME.CON: In state `blimphitstate':
+GAME.CON:476: warning: expected action, found define.
+GAME.CON: In actor `ORGANTIC':
+GAME.CON:3969: warning: found `else' with no `if'.
+GAME.CON: In state `pigshootenemystate':
+GAME.CON:5892: warning: found `else' with no `if'.
+Found 3 warning(s), 0 error(s).
+Resizing code buffer to 16189*8 bytes
+Script compiled in 7ms, 16181*8b, version 1.4+
+1917/11264 labels, 321/2048 variables
+125 quotes, 207 actors
+Initialized 24.0M cache
+RTS file DUKE.RTS was not found
+Initializing OSD...
+0 joystick(s) found
+Executing "settings.cfg"
+Setting video mode 320x240 (16-bpp windowed)
+Initializing music...
+Initializing sound...
+ 
+Wrote eduke32.cfg
+Wrote settings.cfg

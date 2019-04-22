@@ -1,0 +1,638 @@
+drive_iso.o: drive_iso.cpp \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cctype \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/c++config.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/os_defines.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/features.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/cpu_defines.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/ctype.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_touplow.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cstring \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/string.h \
+ /opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stddef.h \
+ cdrom.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/string \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stringfwd.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/memoryfwd.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/char_traits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_algobase.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/functexcept.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception_defines.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/cpp_type_traits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/type_traits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/numeric_traits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_pair.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/move.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/concept_check.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/type_traits \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator_base_types.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator_base_funcs.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/debug/assertions.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/ptr_traits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/debug/debug.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/predefined_ops.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/postypes.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cwchar \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/wchar.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdio.h \
+ /opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stdarg.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cstdint \
+ /opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stdint.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdint.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/allocator.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/c++allocator.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/new_allocator.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/new \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/exception \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception_ptr.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/cxxabi_init_exception.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/typeinfo \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/hash_bytes.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/nested_exception.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/localefwd.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/c++locale.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/clocale \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/locale.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_locale.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/iosfwd \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/ostream_insert.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/cxxabi_forced.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_function.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/backward/binders.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/range_access.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/initializer_list \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_string.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/atomicity.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/gthr.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/gthr-default.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/pthread.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/endian.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sched.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/time.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/sched.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/stdlib.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cstdlib \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdlib.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitflags.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitstatus.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/types.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/select.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/select.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/sysmacros.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/alloca.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/std_abs.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_clk_tck.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/signal.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/setjmp.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/atomic_word.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/alloc_traits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/alloc_traits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/string_conversions.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cstdio \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_stdio.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/stdio_lim.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cerrno \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/errno.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/errno.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/linux/errno.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/asm/errno.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno-base.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/functional_hash.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_string.tcc \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/iostream \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ostream \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ios \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/ios_base.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_classes.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_classes.tcc \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/system_error \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/error_constants.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/stdexcept \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/streambuf \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/streambuf.tcc \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_ios.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cwctype \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/wctype.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/ctype_base.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/streambuf_iterator.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/ctype_inline.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets.tcc \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_ios.tcc \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/ostream.tcc \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/istream \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/istream.tcc \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/vector \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_construct.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_uninitialized.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_vector.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_bvector.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/vector.tcc \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/fstream \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/codecvt.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/basic_file.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/c++io.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/fstream.tcc \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/sstream \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/sstream.tcc \
+ ../../include/dosbox.h ../../config.h ../../include/logging.h \
+ ../../include/mem.h ../../include/mixer.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_main.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_stdinc.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_config.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_platform.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/strings.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/inttypes.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/begin_code.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/close_code.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_audio.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_error.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_endian.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_mutex.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_thread.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_rwops.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_cdrom.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_cpuinfo.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_events.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_active.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_keyboard.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_keysym.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_mouse.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_video.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_joystick.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_quit.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_loadso.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_timer.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_version.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_thread.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_sound.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL.h \
+ ../../include/dos_system.h ../../include/cross.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/stat.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/stat.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/dirent.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/dirent.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/posix1_lim.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/local_lim.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/linux/limits.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_local_lim.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/unistd.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/posix_opt.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_posix_opt.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/environments.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/confname.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/getopt.h \
+ ../../include/support.h ../../include/support.h drives.h \
+ ../../include/shell.h ../../include/programs.h ../../include/dos_inc.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/list \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_list.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/allocated_ptr.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/aligned_buffer.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/list.tcc
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cctype:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/c++config.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/os_defines.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/features.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/cpu_defines.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/ctype.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/types.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/typesizes.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_touplow.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cstring:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/string.h:
+
+/opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stddef.h:
+
+cdrom.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/string:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stringfwd.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/memoryfwd.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/char_traits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_algobase.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/functexcept.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception_defines.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/cpp_type_traits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/type_traits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/numeric_traits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_pair.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/move.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/concept_check.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/type_traits:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator_base_types.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator_base_funcs.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/debug/assertions.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_iterator.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/ptr_traits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/debug/debug.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/predefined_ops.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/postypes.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cwchar:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/wchar.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdio.h:
+
+/opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stdarg.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cstdint:
+
+/opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stdint.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdint.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/allocator.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/c++allocator.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/new_allocator.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/new:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/exception:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/exception_ptr.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/cxxabi_init_exception.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/typeinfo:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/hash_bytes.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/nested_exception.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/localefwd.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/c++locale.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/clocale:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/locale.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_locale.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/iosfwd:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/ostream_insert.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/cxxabi_forced.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_function.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/backward/binders.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/range_access.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/initializer_list:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_string.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/atomicity.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/gthr.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/gthr-default.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/pthread.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/endian.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/endian.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/byteswap.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-common.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/byteswap-16.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sched.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/time.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/sched.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/stdlib.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cstdlib:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdlib.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitflags.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/waitstatus.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/types.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/select.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/select.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/sigset.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/time.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/sysmacros.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/pthreadtypes.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/alloca.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/std_abs.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_clk_tck.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/signal.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/setjmp.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/atomic_word.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/alloc_traits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/alloc_traits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/string_conversions.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cstdio:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_stdio.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/stdio_lim.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cerrno:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/errno.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/errno.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/linux/errno.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/asm/errno.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/asm-generic/errno-base.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/functional_hash.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_string.tcc:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/iostream:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ostream:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ios:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/ios_base.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_classes.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_classes.tcc:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/system_error:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/error_constants.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/stdexcept:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/streambuf:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/streambuf.tcc:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_ios.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/cwctype:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/wctype.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/ctype_base.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/streambuf_iterator.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/ctype_inline.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/locale_facets.tcc:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/basic_ios.tcc:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/ostream.tcc:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/istream:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/istream.tcc:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/vector:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_construct.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_uninitialized.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_vector.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_bvector.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/vector.tcc:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/fstream:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/codecvt.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/basic_file.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/arm-miyoo-linux-uclibcgnueabi/bits/c++io.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/fstream.tcc:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/sstream:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/sstream.tcc:
+
+../../include/dosbox.h:
+
+../../config.h:
+
+../../include/logging.h:
+
+../../include/mem.h:
+
+../../include/mixer.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_main.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_stdinc.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_config.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_platform.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/strings.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/inttypes.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/begin_code.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/close_code.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_audio.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_error.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_endian.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_mutex.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_thread.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_rwops.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_cdrom.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_cpuinfo.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_events.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_active.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_keyboard.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_keysym.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_mouse.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_video.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_joystick.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_quit.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_loadso.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_timer.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_version.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_thread.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL_sound.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/SDL/SDL.h:
+
+../../include/dos_system.h:
+
+../../include/cross.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/stat.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/stat.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/dirent.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/dirent.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/posix1_lim.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/local_lim.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/linux/limits.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_local_lim.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/unistd.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/posix_opt.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_posix_opt.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/environments.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/confname.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/getopt.h:
+
+../../include/support.h:
+
+../../include/support.h:
+
+drives.h:
+
+../../include/shell.h:
+
+../../include/programs.h:
+
+../../include/dos_inc.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/list:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/stl_list.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/allocated_ptr.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/ext/aligned_buffer.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/include/c++/7.3.0/bits/list.tcc:

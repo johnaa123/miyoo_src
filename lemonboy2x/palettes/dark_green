@@ -1,0 +1,11 @@
+# R-Type 1 palette from R-Type DX
+set dmg_bgp  0xc0ffff 0x408080 0x204040 0x000000
+set dmg_wndp 0xc0ffff 0x408080 0x204040 0x000000
+set dmg_obp0 0xc0ffff 0x408080 0x204040 0x000000
+set dmg_obp1 0xc0ffff 0x408080 0x204040 0x000000
+
+# green filter
+set colorfilter 1
+set red 0 0 0 0
+set green 85 85 85 0
+set blue 0 0 0 0

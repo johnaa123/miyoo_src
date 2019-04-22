@@ -1,0 +1,50 @@
+CONFIG={};
+CONFIG.Debug=0;
+CONFIG.Type=0;
+CONFIG.Rotate=0;
+CONFIG.Width=320;
+CONFIG.Height=240;
+CONFIG.bpp=16;
+CONFIG.FullScreen=0;
+CONFIG.EnableSound=1;
+CONFIG.KeyRepeat=0;
+CONFIG.KeyRepeatDelay=300;
+CONFIG.KeyRePeatInterval=30;
+CONFIG.XScale=18;
+CONFIG.YScale=9;
+CONFIG.CurrentPath="./"
+CONFIG.DataPath=CONFIG.CurrentPath .. "data/";
+CONFIG.PicturePath=CONFIG.CurrentPath .. "pic/";
+CONFIG.SoundPath=CONFIG.CurrentPath .. "sound/";
+CONFIG.ScriptPath=CONFIG.CurrentPath .. "script/";
+CONFIG.OldEventPath=CONFIG.ScriptPath .. "oldevent/";
+CONFIG.NewEventPath=CONFIG.ScriptPath .. "newevent/";
+CONFIG.JYMain_Lua=CONFIG.ScriptPath .. "jymain.lua";
+CONFIG.FontName="fonts/font.ttf";
+CONFIG.OSCharSet=1;
+CONFIG.MP3=0; 
+CONFIG.MMapAddX=2;
+CONFIG.MMapAddY=2;
+CONFIG.SMapAddX=2;
+CONFIG.SMapAddY=16;
+CONFIG.WMapAddX=2;
+CONFIG.WMapAddY=18;
+CONFIG.MusicVolume=128;
+CONFIG.SoundVolume=128;
+local LargeMemory=0;
+if LargeMemory==0 then
+  CONFIG.MAXCacheNum=1000;
+  CONFIG.CleanMemory=0;
+  CONFIG.LoadFullS=1;
+  CONFIG.LoadMMapType=0;
+  CONFIG.PreLoadPicGrp=1;
+else
+  CONFIG.MAXCacheNum=500;
+  CONFIG.CleanMemory=1;
+  CONFIG.LoadFullS=0;
+  CONFIG.LoadMMapType=1;
+  CONFIG.PreLoadPicGrp=0;
+end
+CONFIG.LoadMMapScope=0;
+CONFIG.FastShowScreen=1;
+

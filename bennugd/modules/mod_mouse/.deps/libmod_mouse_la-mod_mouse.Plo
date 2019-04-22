@@ -1,0 +1,52 @@
+libmod_mouse_la-mod_mouse.lo: mod_mouse.c \
+ /home/steward/Github/miyoo_src/bennugd/modules/../core/include/bgddl.h \
+ /home/steward/Github/miyoo_src/bennugd/modules/../core/include/arrange.h \
+ /opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stdint.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdint.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/features.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h \
+ /opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h \
+ /home/steward/Github/miyoo_src/bennugd/modules/../core/include/typedef_st.h \
+ /home/steward/Github/miyoo_src/bennugd/modules/../core/include/instance_st.h \
+ /home/steward/Github/miyoo_src/bennugd/modules/../core/include/sysprocs_st.h \
+ /home/steward/Github/miyoo_src/bennugd/modules/../core/include/instance.h \
+ /home/steward/Github/miyoo_src/bennugd/modules/../core/include/i_procdef_st.h \
+ /home/steward/Github/miyoo_src/bennugd/modules/../core/include/instance_st.h \
+ /home/steward/Github/miyoo_src/bennugd/modules/../core/include/commons_defs.h \
+ mod_mouse_exports.h
+
+/home/steward/Github/miyoo_src/bennugd/modules/../core/include/bgddl.h:
+
+/home/steward/Github/miyoo_src/bennugd/modules/../core/include/arrange.h:
+
+/opt/miyoo/lib/gcc/arm-miyoo-linux-uclibcgnueabi/7.3.0/include/stdint.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/stdint.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/features.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/uClibc_config.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/sys/cdefs.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wchar.h:
+
+/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/include/bits/wordsize.h:
+
+/home/steward/Github/miyoo_src/bennugd/modules/../core/include/typedef_st.h:
+
+/home/steward/Github/miyoo_src/bennugd/modules/../core/include/instance_st.h:
+
+/home/steward/Github/miyoo_src/bennugd/modules/../core/include/sysprocs_st.h:
+
+/home/steward/Github/miyoo_src/bennugd/modules/../core/include/instance.h:
+
+/home/steward/Github/miyoo_src/bennugd/modules/../core/include/i_procdef_st.h:
+
+/home/steward/Github/miyoo_src/bennugd/modules/../core/include/instance_st.h:
+
+/home/steward/Github/miyoo_src/bennugd/modules/../core/include/commons_defs.h:
+
+mod_mouse_exports.h:

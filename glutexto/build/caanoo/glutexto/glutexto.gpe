@@ -1,0 +1,6 @@
+#!/bin/sh
+cd `dirname $0`
+
+LD_LIBRARY_PATH=. ./glutexto 2>&1 >glutexto.log
+
+cd /usr/gp2x; ./gp2xmenu

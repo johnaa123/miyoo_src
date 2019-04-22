@@ -1,0 +1,255 @@
+
+Lemonboy2x, a Gameboy/Gameboy Color emulator for Gp2x
+
+= Motivation =
+
+Gnuboy by K-teto is great for Gameboy and Gameboy color emulation, but its
+interface is absolutely different from any other emulator. In 2006, K-teto
+worked on a new version of Gnuboy with art by Madcore that was codenamed
+'lemon', and then he lost the source files. A few years later, I glue
+together the bits of code that K-teto saved and the terrific Madcore graphics
+to create a version of Gnuboy with this enhancements:
+
+ - Solves some Gnuboy2x bugs: long lists, zip files support.
+ - More intuitive menu
+ - Configurable palettes
+ - More flexible frame support
+ - Additional video modes
+ - Super Gameboy support
+
+= Usage =
+
+Unzip in any directory of the SD and place roms (GB, GBC or ZIP that stores
+only a single rom file) in the 'roms' directory. Run lemonboy2x.gpe and
+enjoy.
+
+If you want to use frames in the unscaled video setting, a RGB-PNG
+image in the 'frames' directory. The recommended size is 320x240, but you can
+use any image size. Remember to leave a central region of 160x144 for the
+Gameboy screen. Frames are not used in the scaled modes.
+
+GB and GBC games could use palettes/filters to modify on screen colors. Copy
+palettes (GB) and filters (GBC) in the directory 'palettes' See the CONFIG
+file for the format of these files.
+
+The default distribution includes some example frames and palettes/filters.
+
+== Compilation ==
+
+In the src directory:
+
+make: compiles the PC SDL version with lots debugging information
+make -f Makefile.gp2x: compiles the Gp2x version with minimal lib support
+make -f Makefile.gp2x.sdl: compiles the Gp2x version with SDL support
+make dist: compiles every version and creates a distributable zip
+
+== Buttons ==
+
+Buttons in the menu:
+
+A/B: accept
+X: cancel
+UP/DOWN: move up/down one item
+L/R: move up/down ten items (one page)
+RIGHT/LEFT: change an item, if possible
+SELECT in the rom list: show/hide the preview box, if available
+
+Buttons during game (configurable, see CONFIG):
+
+START:	Start
+SELECT:	Select
+B	Gameboy A button
+X	Gameboy B button
+Hold A	Change video mode
+Y	Show menu
+L	Save state in slot 0
+R	Load state from slot 0
+Vol+/-	Change volume
+
+== Compatibility with Gnuboy ==
+
+You can use the games that were saved with Gnuboy in Lemonboy2x. Copy files
+in Gnuboy's 'sram' directory into Lemonboy's 'saves', changing the suffix
+.X.srm to .sav. For example, if your rom is named "mygame.gb", Gnuboy saved
+the ram state in "gnuboy2x/sram/myname.gb.srm" and it should be copied as
+"lemonboy2x/saves/mygame.sav"
+
+Since this is the first version of an emulator from Gnuboy for any platform
+with Super Gameboy support, states saved in Super Gameboy mode won't work on
+any other Gnuboy emulator. In-game saves (.srm files) should work fine.
+
+Frames in Gnuboy were 320x240 BMP files, and you should convert to RGB PNG to
+use them in Lemonboy2x.
+
+== Configuration files ==
+
+Lemonboy reads "etc/system.gp2x" only once at the beginning of the execution.
+When you load the rom "mygame.zip", Lemonboy reads "configs/default.rc"
+and then "configs/mygame.rc". The format of these files is specified in
+CONFIG, but they are simple ASCII texts that can be edited with any text
+editor.
+
+There are lots of configurable things in this emulator, including in-game
+buttons or emulated system. Many of them are not configurable throught the
+options menu, since you'll only need to set them once. The following lines
+are only a quick summary, read the CONFIG file for in depth configuration. 
+
+There are several settings that you should only modify in "etc/system.gp2x"
+
+- set previews true/false: switch on/off the preview box
+- set romdir "/path/to/roms": set the path to the roms, if not 'roms'
+- set confirmsave true/false: confirm save state
+- set confirmload true/false: confirm load state
+- set subdirectories on/off: switch on/off the support for subdirectories
+
+There are several setting that you can modify in any configuration file by
+hand, but it seems more useful in the per-game rc files:
+
+- set samplerate 44100: the sample rate for the sound. 44100 is the
+  default, maximum quality, but you can gain speed setting the samplerate to
+  22050, 11025 or as low as 8000.
+- set volumen 80: the default volumen of a game, from 0 to 100
+- set machine 0/1/2/3: to set Gameboy Color/Advance/SGB1/SGB2
+
+== Super Gameboy ==
+
+This version of Lemonboy has preliminary Super Gameboy support, both SGB1 and
+SGB2. Unfortunately, there are some known issues:
+
+- Frames: lemonboy supports custom frames for SGB games. You can save this
+  frames in the system menu.
+- Palettes: I still have to figure out how palettes work for moving sprites
+  and CGB.  Currently, palettes have some problems:
+    - They are OK in games such as Donkey Kong II and III, if you include the
+      option 'set forcepal0 true'
+    - Weird colors for moving sprites in many GB games. A temporal fix is
+      using 'set forcepal0 false' for these games. Moving sprites are then
+      in Black and White.
+    - Very bad support for CGB games, no matter of forcepal0. Do not use SGB
+      mode with CGB games.
+- There is not support for multiplayer, sound effects or direct access to
+  the SNES hardware.
+
+  As you see, only frames work OK. Maybe you'll want to switch SGB mode just
+  to save the custom frame, and then restart the game in CGB mode with the
+  custom frame.
+
+== Game configurations for performance ==
+
+This version of Lemonboy only has mode 16 bits in Gp2x. I thought that the
+mode 8 bits would improve performance, but it doesn't. So I removed the
+video mode 8 to clean the source code. Hopefully, you will not notice any
+difference.
+
+If frameskip is on, lemonboy will drop some of the frames of the game in
+order to gain speed. In this mode you can set down the cpu clock and save
+battery. The frameskip algorithm is very subtle and hardly noticeable, and
+it is recommended to set it always on.
+
+Gameboy games work ak 60 frames per second (FPS). You can set the FPS display
+on in order to check the effect of your configuration changes on speed. Below
+60FPS your game is slow, and then you can try to set frameskip on, set mode
+8, use "colorful" palette for GBC games (since it does nothing), raise the
+clock frequency or low the samplerate, maybe in this order.
+
+Take into account that the SGB mode can run games slower that the other
+modes.
+
+= License and credits =
+
+See the CREDITS and LICENSE files. Juanvvc is the one that compiled the
+hard work of many people under the GPL license.
+
+I use to check my mail juanvvc at gmail.com I can read and write English,
+Spanish, Catalan and Portugues. If you write slowly, I understand French and
+Italian. I love hearing about people that run my applications.
+
+History:
+
+0.5 06/09:
+	* Removes mode 8, since it does not improve speed and makes the code
+	less readable.
+	* It is compatible again with SDL: first step to a portable lemonboy 
+	* Directories and subdirectories for roms
+	* Speed improvement: compilation flags and assembler for memcpy/memset
+	thanks to Mame4all by Franxis
+	* Interface to advance time in games with internal clock
+	* Machine selection: color gameboy, advance, super 1&2.
+	* Any image size can be used for frames.
+	* New menu option: "Save Super GB border" saves the current border in
+	Super Gameboy mode. Files are saved in the frames directory, with the
+	same name that the rom.
+	* Partial support for Super Gameboy:
+		- Super gameboy detection, both in rom and hardware
+		- Frames and palettes support
+		- No support to aditional sound effects
+		- No multiplayer support
+		- No support to SNES system calls
+	* Bug in the options menu: it always show the saved configuration
+	* Removed the RESET option to use he space for SAVE FRAME.
+
+0.4 06/01/08
+	* Shows the selected name in the list of roms while preview is on
+	* SELECT switches on/off the preview box
+	* stop the sound while holding a non-gameboy button
+	* A menu entry to save SRAM
+	* new fullscreen modes: double size and deformed double size
+	* confirm saves and loads
+	* Many messages on screen: game loades, game saves, volume...
+	* button to change video, configurable modes
+	* more accurate timing: 60FPS each second
+	* more stability in the sound system, I think
+	* solved the error while loading unzipped roms
+	* previews in PNG format
+0.3 05/27/08
+	* 8 bits mode
+	* Many options to modify in the menu: cpu clock, frameskip...
+	* Speed improvement: profiling, some emulator tweaks
+	* Corrected the long filenames bug in list of files
+	* New filters, also for GBC
+	* Sync just after saving
+	* L and R go up/down one page in the list of files
+	* Use the internal framelimit code, modified for speed.
+	* Configurable rom path
+	* More files in the list of files (up to 10)
+	* preview of games
+	* clears the complete screen in fullscreen mode.
+	* quick movement holding R/L/UP/DOWN
+	* remembers the last selected file.
+	* Confirm overwrite in savesates
+	* Bug in the sound core
+	* Wait for button release during game (DMusta's bug)
+0.2 05/19/08
+	* Changed the separation in font: now it is better looking
+	* Changed _ to draw <SPC> in font
+	* Apply immediately the palette in options
+	* Correct saving of palette
+	* Bug in the list of files: there were an extra item
+	* Bug in the list of files: only 16 files
+	* Saves SRAM after changing rom, not only at the end
+	* Load from Zip files
+	* Many other bug corrections
+	* Released in gp32x.com
+0.1 05/18/08
+	* First release in gp32spain.com
+
+TODO:
+	* TV mode and external joysticks
+	* Super Gameboy support
+	* GBA mode
+	* Improve speed (unlikely)
+	* Bilinear filtering (unlikely)
+
+KNOWN BUGS:
+	* Sound crashes after loading some games. Once crashed, the emulation
+	goes on but lemonboy2x cannot exit to the gp2x menu.
+	* Super Gameboy games don't draw characters
+	* After exiting a Super Gameboy game, uncolor games won't show on
+	screen
+	* System crashes on Gp2x when loading Super Gameboy games
+	* Palettes won't work using button A
+
+REPORTED BUGS (that I cannot replicate):
+	* Load game-menu-resume-menu-resume-menu (crash)
+
+(C) 2008-2009, juanvvc <juanvvc@gmail.com>

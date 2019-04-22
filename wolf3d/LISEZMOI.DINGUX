@@ -1,0 +1,46 @@
+*****************************************
+*					*
+*	Wolf3Dingoo/Spear Of Destiny	*
+*					*
+*****************************************
+
+
+Wolf3Dingoo et Spear Of Destiny sont des portages du moteurs des jeux Wolfenstein 3D et Spear Of Destiny (http://www.idsoftware.com/games/wolfenstein/wolf3d/ par ID Software)
+
+
+I . Construction/Installation
+	- Pour construire le jeu, allez dans le répertoire src :
+		$cd src
+	- Editez version.h en fonction de la version du jeu que vous voulez émuler :
+		$gedit version.h
+	- Faites un make :
+		$make
+	- Vous devriez alors avoir un fichier wolf3d.
+
+	- Pour installer, copiez wolf3d et les données du jeux correspondant sur votre carte SD.
+
+
+II . Commandes
+
+Menu : 
+	- Valider : A/Start
+	- Annuler : B/Select
+
+Jeu :
+	- Les commandes du jeu peuvent être modifer dans le menu "Control".
+
+
+III . Remerciements
+
+Merci d'abord à ID Software, merci à Moritz "Ripper" Kroll (http://www.chaos-software.de.vu) pour Wolf4D.
+
+Merci aussi à yoannd26, Warpedflash et Kassad pour les différents test.
+
+
+IV . Contribution
+
+Si vous voulez m'aider à m'acheter une Dingoo, vous pouvez faire un don Paypal à cette adresse : benvr@wanadoo.fr
+Je vous en remercie d'avance.
+
+
+Ezial

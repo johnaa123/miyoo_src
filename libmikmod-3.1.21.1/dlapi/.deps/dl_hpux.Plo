@@ -1,0 +1,3 @@
+dlapi/dl_hpux.lo: dlapi/dl_hpux.c config.h
+
+config.h:

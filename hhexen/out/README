@@ -1,0 +1,29 @@
+Ported by JohnnyonFlame for the Dingux, branched from HHexen found on http://sourceforge.net/projects/hhexen/. (Always give credits where they are due! People spent time on these!)
+The controls are pretty simple:
+
+MOVEMENT: 		D-PAD
+STRAFE: 		B+D-PAD
+CYCLE INVENTARY: 	SELECT+B/X
+CYCLE WEAPONS: 		SELECT+Y/A
+USE ARTIFACTS: 		START
+FIRE GUN:		A
+ACTION:			X
+RUN:			Y
+		
+CREDITS:
+
+Dingux Port + Adaptations:
+JohnnyonFlame
+
+Original Port:
+stevenaaus @ Sourceforge.net
+theoddone33 @ Sourceforge.net
+
+Thank you list:
+Thanks for everyone in the #dingoonity channel, you're all awesome.
+Thanks for the people at #SDL!
+Another great thanks for the whole Dingoo Community.
+One more thank you, this time is for John Carmack, for being so good to the OPENSOURCE Scene.
+
+THIS PORT IS BOUND BY GPL LICENSES,ANY WORK BASED ON THIS PORT MUST HAVE ITS CODE RELEASED, HIT ME AT johnnyonflame(at)hotmail(dot)com
+

@@ -1,0 +1,56 @@
+# System configuration for gp2x
+
+# Buttons
+bind up +up
+bind joyup +up
+bind down +down
+bind joydown +down
+bind left +left
+bind joyleft +left
+bind right +right
+bind joyright +right
+bind a +b
+bind joy1 +b
+bind s +a
+bind joy0 +a
+bind enter +select
+bind joy8 +select
+bind space +start
+bind joy9 +start
+bind esc menu
+bind joy3 menu
+bind v palettes
+bind joy4 palettes
+bind 1 savestate
+bind joy6 savestate
+bind 2 loadstate
+bind joy7 loadstate
+set use_joy true
+
+# System config
+set rcpath configs
+set savedir saves
+set romsdir roms
+set confirmsave true
+set confirmload false
+set previews true
+set deformation 20
+set voffset 12
+set machine 0
+set forcepal0 false
+set showsplash false
+
+# In game config
+set autofskip yes
+set sound yes
+set volumen 80
+set scaling 0
+set vsync no
+set frame frames/default.png
+set palette palettes/default
+
+# Speed hacks
+set samplerate 44100
+set rgb332 true
+set sprsort 0
+

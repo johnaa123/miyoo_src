@@ -1,0 +1,102 @@
+#include <fcntl.h>
+#include <linux/fb.h>
+#include <pthread.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/mman.h>
+#include <sys/ioctl.h>
+#include <sys/soundcard.h>
+#include <pthread.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <stdarg.h>
+#include "polluxregs.h"
+#include "uppermem.h"
+#include "time.h"
+
+#ifndef __GP2X_LIB_H__
+#define __GP2X_LIB_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+extern unsigned char *fb0_8bit, *fb1_8bit; /* current buffers (8 bit) */
+extern unsigned short *fb0_16bit, *fb1_16bit; /* current buffers (16 bit) */
+
+#define gp2x_video_color8(C,R,G,B) (gp2x_video_RGB_palette[(C)].color=((R)>>3)<<11|((G)>>2)<<5|((B)>>3),gp2x_video_RGB_palette[(C)].dirty=1)
+#define gp2x_video_color16(R,G,B)	(((((R)&0xF8)<<8)|(((G)&0xFC)<<3)|(((B)&0xF8)>>3)))
+#define gp2x_video_getr16(C) (((C)>>8)&0xF8)
+#define gp2x_video_getg16(C) (((C)>>3)&0xFC)
+#define gp2x_video_getb16(C) (((C)<<3)&0xF8)
+
+extern int gp2x_init(int bpp, int rate, int bits, int stereo);
+extern void gp2x_deinit(void);
+
+#define BIT(number) (1<<(number))
+enum {
+	GP2X_A = BIT(20),
+	GP2X_B = BIT(21),
+	GP2X_X = BIT(22),
+	GP2X_Y = BIT(23),
+	GP2X_L = BIT(7),
+	GP2X_R = BIT(6),
+	GP2X_START = BIT(9),
+	GP2X_SELECT = BIT(8),
+	GP2X_LEFT = BIT(16),
+	GP2X_RIGHT = BIT(17),
+	GP2X_UP = BIT(18),
+	GP2X_DOWN = BIT(19),
+	GP2X_VOL_UP = BIT(10),
+	GP2X_VOL_DOWN = BIT(11),
+	GP2X_NOBUTTON=99
+};
+
+extern void gp2x_set_clock(int speed); /* 200, 533, 650 */
+
+extern unsigned int gp2x_joystick_read(int n);
+extern void gp2x_video_flip(void);
+extern void gp2x_video_flip_single(void);
+
+typedef struct gp2x_palette { unsigned short color; unsigned short dirty; } gp2x_palette;
+extern gp2x_palette gp2x_video_RGB_palette[256];
+extern void gp2x_video_setpalette(void);
+
+extern int gp2x_sound_rate;
+extern int gp2x_sound_stereo;
+extern int gp2x_clock;
+
+extern void gp2x_timer_delay(clock_t ticks);
+extern void gp2x_sound_play(void *buff, int len);
+extern unsigned int gp2x_joystick_press (int n);
+extern void gp2x_sound_volume(int left, int right);
+extern void gp2x_sound_thread_mute(int p);
+extern void gp2x_sound_thread_start(void *buff);
+extern void gp2x_sound_thread_stop(void);
+extern void gp2x_sound_set_rate(int rate);
+extern void gp2x_sound_set_stereo(int stereo);
+extern clock_t gp2x_timer_read(void);
+extern void gp2x_timer_profile(void);
+
+extern void gp2x_set_video_mode(int bpp,int width,int height);
+
+extern void gp2x_printf(char* fmt, ...);
+extern void gp2x_printf_init(void);
+extern void gp2x_gamelist_text_out(int x, int y, char *eltexto);
+extern void gp2x_gamelist_text_out_fmt(int x, int y, char* fmt, ...);
+
+#ifdef MMUHACK
+#include "squidgehack.h"
+#endif
+
+extern void gp2x_sound_frame(void *blah, signed short *stream, int len);
+
+void flushcache(void *start_address, void *end_address, int flags);
+void spend_cycles(int c);
+#ifdef __cplusplus
+} /* End of extern "C" */
+#endif
+
+#endif

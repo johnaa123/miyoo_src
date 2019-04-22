@@ -1,0 +1,18 @@
+This port was branched from HHeretic, downloaded from http://hhexen.sourceforge.net/hheretic.html, revision 0.2.2. (Always give credits where credits are due, people spent time on those projects!)
+Ported for Dingux by Johnny on Flame.
+
+Game Keys:
+
+Movements: 		D-PAD
+Strafing: 		B+D-PAD or L/R
+Inventory Cycling: 	SELECT+X/B
+Weapon Cycling: 	SELECT+Y/A
+Use Artifact: 		START
+Fire Weapon:		A
+Run/Walk:		Y
+Action (door/switch):	X
+
+Feedback? johnnyonflame@hotmail.com
+
+Thanks for the original developers of HHeretic.
+Thanks for all the dudes on #dingoonity for helping with my stupid questions!

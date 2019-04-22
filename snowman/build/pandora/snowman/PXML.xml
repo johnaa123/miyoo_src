@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PXML xmlns="http://openpandora.org/namespaces/PXML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PXML_schema.xsd">
+  <package id="snowman-reloaded">
+    <version major="2" minor="0" release="17" build="0"/>
+    <author name="Ziz" website="http://ziz.openhandhelds.org"/>
+    <titles>
+      <title lang="en_US">
+        Snowman Reloaded
+      </title>
+    </titles>
+    <title lang="en_US">
+      Snowman Reloaded
+    </title>
+    <descriptions>
+      <description lang="en_US">
+       Snowman is an entry I originally made in just one week for the "Homebrew platforming competition" two years ago.
+       Now I participate again for the "Alive and Kicking Coding Competition" with new enemies, new levels, improved engine and c4a support!
+       It is an 2D jump and run with 3D graphics totally rendered with the cpu.
+       In Snowman you are a snowman with the task to kill a given number of enemies per level to unlock the next level. If you collect snow you grow, but nearly every action you do let's you loose snow again like jumping (1 snow), shooting (2 snow) or getting hit by an enemy (3 snow). So you have to economize your snow.
+       Try to solve levels as fast as possible to get a better score in c4a!
+       
+       Change for version 2.0.0.4: Fixed a little bug, that my crashed the whole game at level change. Maybe the bug CCF mentioned? However, thanks to Foxblock for his great reproducible bugreport!
+       Change for version 2.0.0.5: Higher timeout (15s instead of 10s) as people have problems commiting the c4a scores. I hope this helps.
+       Change for version 2.0.0.6: Cooler music change + no music break at loading c4a scores.
+       Change for version 2.0.0.7: Fixed an error in the map for hard mode. Furthermore add a "Try again" entry if the c4a submit fails.
+       Change for version 2.0.0.8: Fixed an error since version 2.0.0.7, which broke the hard mode.
+       Change for version 2.0.0.9: Fixed another sound bug. Snowman is now officially bug free. :P
+       Change for version 2.0.0.10: Downloading the two scores now parallel
+       Change for version 2.0.0.11: Hopefully last version with some little improvements like acceleration when moving, maximized falling speed and level reset via select, 
+       Change for version 2.0.0.12: Fixed a bug, that you can't cancel exiting the game
+       Change for version 2.0.0.13: Let's use NEON they said... it will be fast they said...
+       Change for version 2.0.0.14: I can count to potato!
+       Change for version 2.0.0.15: Changeable button mapping. Just edit the controls.cfg in the appdata folder.
+       Change for version 2.0.0.16: Control mapping changeable ingame.
+       Change for version 2.0.0.17: C4A should now work better
+      </description>
+    </descriptions>
+    <description lang="en_US">
+       Snowman is an entry I originally made in just one week for the "Homebrew platforming competition" two years ago.
+       Now I participate again for the "Alive and Kicking Coding Competition" with new enemies, new levels, improved engine and c4a support!
+       It is an 2D jump and run with 3D graphics totally rendered with the cpu.
+       In Snowman you are a snowman with the task to kill a given number of enemies per level to unlock the next level. If you collect snow you grow, but nearly every action you do let's you loose snow again like jumping (1 snow), shooting (2 snow) or getting hit by an enemy (3 snow). So you have to economize your snow.
+       Try to solve levels as fast as possible to get a better score in c4a!
+       
+       Change for version 2.0.0.4: Fixed a little bug, that my crashed the whole game at level change. Maybe the bug CCF mentioned? However, thanks to Foxblock for his great reproducible bugreport!
+       Change for version 2.0.0.5: Higher timeout (15s instead of 10s) as people have problems commiting the c4a scores. I hope this helps.
+       Change for version 2.0.0.6: Cooler music change + no music break at loading c4a scores.
+       Change for version 2.0.0.7: Fixed an error in the map for hard mode. Furthermore add a "Try again" entry if the c4a submit fails.
+       Change for version 2.0.0.8: Fixed an error since version 2.0.0.7, which broke the hard mode.
+       Change for version 2.0.0.9: Fixed another sound bug. Snowman is now officially bug free. :P
+       Change for version 2.0.0.10: Downloading the two scores now parallel
+       Change for version 2.0.0.11: Hopefully last version with some little improvements like acceleration when moving, maximized falling speed and level reset via select, 
+       Change for version 2.0.0.12: Fixed a bug, that you can't cancel exiting the game
+       Change for version 2.0.0.13: Let's use NEON they said... it will be fast they said...
+       Change for version 2.0.0.14: I can count to potato!
+       Change for version 2.0.0.15: Changeable button mapping. Just edit the controls.cfg in the appdata folder.
+       Change for version 2.0.0.16: Control mapping changeable ingame.
+       Change for version 2.0.0.17: C4A should now work better
+    </description>
+    <icon src="./snowman.png"/>
+  </package>
+  <application id="snowman-reloaded" appdata="snowman-reloaded">
+    <exec command="./snowman.sh"/>
+    <title lang="en_US">Snowman Reloaded</title>
+    <author name="Ziz" website="http://ziz.openhandhelds.org"/>
+    <version major="2" minor="0" release="17" build="0"/>
+    <osversion major="1" minor="0" release="0" build="0"/>
+      <description lang="en_US">
+       Snowman is an entry I originally made in just one week for the "Homebrew platforming competition" two years ago.
+       Now I participate again for the "Alive and Kicking Coding Competition" with new enemies, new levels, improved engine and c4a support!
+       It is an 2D jump and run with 3D graphics totally rendered with the cpu.
+       In Snowman you are a snowman with the task to kill a given number of enemies per level to unlock the next level. If you collect snow you grow, but nearly every action you do let's you loose snow again like jumping (1 snow), shooting (2 snow) or getting hit by an enemy (3 snow). So you have to economize your snow.
+       Try to solve levels as fast as possible to get a better score in c4a!
+       
+       Change for version 2.0.0.4: Fixed a little bug, that my crashed the whole game at level change. Maybe the bug CCF mentioned? However, thanks to Foxblock for his great reproducible bugreport!
+       Change for version 2.0.0.5: Higher timeout (15s instead of 10s) as people have problems commiting the c4a scores. I hope this helps.
+       Change for version 2.0.0.6: Cooler music change + no music break at loading c4a scores.
+       Change for version 2.0.0.7: Fixed an error in the map for hard mode. Furthermore add a "Try again" entry if the c4a submit fails.
+       Change for version 2.0.0.8: Fixed an error since version 2.0.0.7, which broke the hard mode.
+       Change for version 2.0.0.9: Fixed another sound bug. Snowman is now officially bug free. :P
+       Change for version 2.0.0.10: Downloading the two scores now parallel
+       Change for version 2.0.0.11: Hopefully last version with some little improvements like acceleration when moving, maximized falling speed and level reset via select, 
+       Change for version 2.0.0.12: Fixed a bug, that you can't cancel exiting the game
+       Change for version 2.0.0.13: Let's use NEON they said... it will be fast they said...
+       Change for version 2.0.0.14: I can count to potato!
+       Change for version 2.0.0.15: Changeable button mapping. Just edit the controls.cfg in the appdata folder.
+       Change for version 2.0.0.16: Control mapping changeable ingame.
+       Change for version 2.0.0.17: C4A should now work better
+      </description>
+    <icon src="./snowman.png"/>
+    <previewpics>
+      <pic src="previews/snowman_screenshot.png"/>
+      <pic src="previews/snowman_screenshot2.png"/>
+      <pic src="previews/snowman_screenshot3.png"/>
+    </previewpics>
+    <licenses>
+      <license name="GPLv2+" url="http://www.gnu.org/licenses/gpl-2.0.html" sourcecodeurl="https://github.com/theZiz/snowman"/>
+    </licenses>
+    <categories>
+      <category name="Game">
+        <subcategory name="ActionGame"/>
+      </category>
+    </categories>
+  </application>
+</PXML>
+

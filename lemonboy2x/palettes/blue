@@ -1,0 +1,14 @@
+# Sprites standout.
+# Similar to above, but the colors are more subdued and
+# the window and background are the same. This palette
+# may actually be suitable for playing some games...
+set dmg_bgp  0xd0c0c0 0xa88080 0x785050 0x382828
+set dmg_wndp 0xd0c0c0 0xa88080 0x785050 0x382828
+set dmg_obp0 0xc8e0f8 0x90a8e8 0x4878a8 0x183850
+set dmg_obp1 0x98b8f8 0x3050f8 0x2040a8 0x002060
+
+# blue filter for color games
+set colorfilter 1
+set red 0 0 0 10
+set green 0 0 0 10
+set blue 85 85 85 0

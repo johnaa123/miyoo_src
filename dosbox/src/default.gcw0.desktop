@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=DosBox
+Comment=DOS emulator
+Exec=dosbox %f
+Terminal=false
+Type=Application
+MimeType=application/x-ms-dos-executable;application/x-ms-dos-program;application/x-ms-dos-batch;
+StartupNotify=true
+Icon=dosbox
+Categories=emulators;

@@ -1,0 +1,11 @@
+# Slightly colorful.
+# Not just a plain lightness gradient, but some change
+# in hue as well. Looks ok with some games; designed in
+# particular for the FFL series.
+set dmg_bgp  0x98e0f8 0x78a0c0 0x747080 0x604038
+set dmg_wndp 0x98e0f8 0x78a0c0 0x747080 0x604038
+set dmg_obp0 0x98e0f8 0x78a0c0 0x747080 0x604038
+set dmg_obp1 0x98e0f8 0x78a0c0 0x747080 0x604038
+
+# Use direct colors from carriage
+set colorfilter 0

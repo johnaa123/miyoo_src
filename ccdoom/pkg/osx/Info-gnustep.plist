@@ -1,0 +1,36 @@
+{
+    ApplicationName = "Chocolate Doom";
+    ApplicationDescription = "Conservative source port";
+    ApplicationIcon = app.png;
+    ApplicationRelease = 2.2.1;
+    ApplicationURL = "http://www.chocolate-doom.org/";
+    Authors = (
+        "Simon Howard <fraggle@gmail.com>"
+    );
+    Copyright = "Copyright (C) 1993-2015";
+    CopyrightDescription = "GNU General Public License, version 2";
+    FullVersionID = 2.2.1;
+    GSMainMarkupFile = "";
+    NSExecutable = "launcher";
+    NSIcon = app.png;
+    NSMainNibFile = launcher.nib;
+    NSPrincipalClass = NSApplication;
+    NSRole = Application;
+    NSTypes = (
+        {
+            NSHumanReadableName = "Doom WAD file";
+            NSUnixExtensions = ( wad );
+            NSRole = Viewer;
+            NSMimeTypes = (
+                "application/x-doom"
+            );
+            NSIcon = "wadfile.png";
+        },
+        {
+            NSHumanReadableName = "Dehacked patch";
+            NSUnixExtensions = ( deh );
+            NSRole = Viewer;
+            NSIcon = "wadfile.png";
+        }
+    );
+}

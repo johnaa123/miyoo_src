@@ -1,0 +1,8 @@
+# With this file you can define the possibly useable languages of your
+# applications. It is very similar to a "normal" translation file.
+# The text with the languages have to be namend "languages".
+
+--:languages
+en English
+de Deutsch
+fr Francais

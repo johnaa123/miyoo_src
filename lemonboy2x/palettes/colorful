@@ -1,0 +1,11 @@
+# Debug palette.
+# Each of the four layers is colored differently,
+# making it easier to debug visual glitches in roms
+# that use them all together cleverly.
+set dmg_bgp  0xf898c8 0xf83098 0xc80060 0x600030
+set dmg_wndp 0xd0c0c0 0xa88080 0x785050 0x382828
+set dmg_obp0 0x9898f8 0x3030f8 0x0000c8 0x000060
+set dmg_obp1 0xc8f898 0x98f830 0x60c800 0x306000
+
+# do not filter in color games
+set colorfilter no

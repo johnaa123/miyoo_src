@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Snowman
+Comment=A game about a snowman
+Exec=snowman.sh
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=snowman
+Categories=games;

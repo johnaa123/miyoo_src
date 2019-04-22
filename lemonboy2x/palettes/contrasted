@@ -1,0 +1,11 @@
+# Full contrast grayscale.
+set dmg_bgp  0xffffff 0xaaaaaa 0x555555 0x000000
+set dmg_wndp 0xffffff 0xaaaaaa 0x555555 0x000000
+set dmg_obp0 0xffffff 0xaaaaaa 0x555555 0x000000
+set dmg_obp1 0xffffff 0xaaaaaa 0x555555 0x000000
+
+# no filter in color games
+set colorfilter 1
+set red 85 85 85 0
+set green 85 85 85 0
+set blue 85 85 85 0
